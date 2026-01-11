@@ -61,6 +61,7 @@ a:hover{ text-decoration: underline; }
   justify-content: space-between;
   gap: 14px;
   padding: 14px 0;
+  flex-wrap: wrap;
 }
 
 .brand{
@@ -87,6 +88,7 @@ a:hover{ text-decoration: underline; }
 
 .nav{
   flex: 1 1 auto;
+  min-width: 260px;
   justify-content: flex-end;
   flex-wrap: nowrap;
   overflow-x: auto;
@@ -116,6 +118,7 @@ a:hover{ text-decoration: underline; }
 
 .cta{
   display: inline-flex;
+  flex: 0 0 auto;
   align-items: center;
   gap: 10px;
   padding: 10px 14px;

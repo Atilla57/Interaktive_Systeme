@@ -14,10 +14,68 @@
   --secondary: #8b7cf6;
   --secondary-soft: rgba(139,124,246,0.14);
   --secondary-border: rgba(139,124,246,0.35);
-
 }
 
+/* ===== A11y/UX: Baseline ===== */
+*{ box-sizing: border-box; }
 
+html{
+  /* Wichtig: min-height statt height -> verhindert "abgeschnittene" Footer-Situationen */
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body{
+  /* Sticky-Footer Pattern: Footer bleibt sichtbar, auch bei wenig Inhalt */
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", sans-serif;
+  color: var(--text);
+
+  /* GLOBAL neutral dark gradient (no image) */
+  background: linear-gradient(
+    180deg,
+    #1c1c1c 0%,
+    #232323 40%,
+    #2a2a2a 100%
+  );
+  background-attachment: fixed;
+  line-height: 1.55;
+}
+
+/* Main soll Platz füllen, damit Footer nicht "verschwindet" */
+main{ flex: 1 0 auto; }
+
+/* Sichtbarer Fokus für Tastatur-Navigation */
+:focus-visible{
+  outline: 3px solid rgba(122, 196, 255, 0.9);
+  outline-offset: 3px;
+}
+
+/* Motion reduzieren, wenn Nutzer es möchte */
+@media (prefers-reduced-motion: reduce){
+  *{
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Links besser erkennbar */
+a{
+  color: var(--accent2);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+a:hover{
+  text-decoration-thickness: 3px;
+}
+
+/* ===== Breadcrumb ===== */
 .breadcrumb {
   font-size: 0.9rem;
   opacity: 0.85;
@@ -28,13 +86,12 @@
 
 .breadcrumb a {
   color: #5aa0ff;
-  text-decoration: none;
-}
-
-.breadcrumb a:hover {
   text-decoration: underline;
+  text-underline-offset: 3px;
 }
-
+.breadcrumb a:hover {
+  text-decoration-thickness: 3px;
+}
 
 /* === Zwei-Spalten-Layout (fix für Methodik) === */
 .grid-2 {
@@ -46,12 +103,18 @@
 /* === Klickbare Karten === */
 a.card {
   display: block;
-  text-decoration: none;
+  text-decoration: none; /* Karte ist klickbar, Text darin bleibt lesbar */
   color: inherit;
 }
 a.card:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+/* Fokus auch für Karten sichtbar */
+a.card:focus-visible{
+  outline: 3px solid rgba(122, 196, 255, 0.9);
+  outline-offset: 4px;
+  border-radius: var(--radius);
 }
 
 .card.card-rq {
@@ -62,7 +125,6 @@ a.card:hover {
   );
   border: 1px solid rgba(90, 160, 255, 0.4);
 }
-
 
 .card.card-rq:hover {
   background: linear-gradient(
@@ -78,30 +140,6 @@ a.card:hover {
   font-size: large;
   font-weight: bolder;
 }
-
-*{ box-sizing: border-box; }
-html, body{ height: 100%; }
-body {
-  margin: 0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", sans-serif;
-  color: var(--text);
-
-  /* GLOBAL neutral dark gradient (no image) */
-  background: linear-gradient(
-    180deg,
-    #1c1c1c 0%,
-    #232323 40%,
-    #2a2a2a 100%
-  );
-
-  background-attachment: fixed;
-  line-height: 1.55;
-}
-
-
-
-a{ color: var(--accent2); text-decoration: none; }
-a:hover{ text-decoration: underline; }
 
 .container{
   max-width: var(--max);
@@ -166,7 +204,6 @@ a:hover{ text-decoration: underline; }
   -webkit-overflow-scrolling: touch;
 }
 
-
 .nav-link{
   font-size: 14px;
   color: var(--muted);
@@ -174,6 +211,7 @@ a:hover{ text-decoration: underline; }
   border-radius: 10px;
   border: 1px solid transparent;
   transition: 150ms ease;
+  text-decoration: none; /* Navigation nicht unterstreichen */
 }
 .nav-link:hover{
   color: var(--text);
@@ -202,6 +240,7 @@ a:hover{ text-decoration: underline; }
   font-size: 14px;
   transition: 150ms ease;
   white-space: nowrap;
+  text-decoration: none; /* CTA nicht unterstreichen */
 }
 .cta:hover{
   transform: translateY(-1px);
@@ -252,7 +291,6 @@ a:hover{ text-decoration: underline; }
   border: 1px solid var(--secondary-border);
   background: var(--secondary-soft);
   color: #e9e6ff;
-
 }
 
 h1{
@@ -264,7 +302,7 @@ h1{
 .subtitle{
   margin: 0;
   color: rgba(255,255,255,0.82);
-  font-size: clamp(19px, 1.3vw, 18px);
+  font-size: clamp(15px, 1.3vw, 18px);
   max-width: 70ch;
 }
 
@@ -350,6 +388,7 @@ h1{
   font-weight: 650;
   font-size: 14px;
   transition: 150ms ease;
+  text-decoration: none; /* Buttons nicht unterstreichen */
 }
 .btn:hover{
   background: rgba(255,255,255,0.08);
@@ -366,11 +405,19 @@ h1{
 
 /* Footer */
 .site-footer{
+  /* Sicher sichtbar und nicht "weggeclippt" */
+  flex: 0 0 auto;
   padding: 30px 0 44px;
   border-top: 1px solid var(--border);
   margin-top: 10px;
-  color: var(--muted2);
+
+  /* minimal mehr Kontrast für Lesbarkeit */
+  color: rgba(255,255,255,0.68);
   font-size: 13px;
+
+  /* falls irgendwo overflow/stacking nervt */
+  position: relative;
+  z-index: 1;
 }
 .footer-inner{
   display:flex;
@@ -380,16 +427,20 @@ h1{
   justify-content: space-between;
 }
 .footer-title{
-  color: var(--muted);
+  color: rgba(255,255,255,0.78);
   font-weight: 650;
 }
-.footer-meta{ color: var(--muted2); }
+.footer-meta{ color: rgba(255,255,255,0.68); }
 .footer-links{
   display:flex;
   flex-wrap: wrap;
   gap: 10px;
 }
-.footer-links a{ color: var(--muted2); }
+.footer-links a{
+  color: rgba(255,255,255,0.72);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .footer-links a:hover{ color: var(--text); }
 
 /* Responsive */

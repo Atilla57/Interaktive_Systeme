@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Methodik & Konzept – Interaktive Systeme</title>
+  <meta name="description" content="Methodik und konzeptionelle Einordnung der Projektarbeit zu Interface Agents in Direct-Manipulation-Umgebungen." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header" aria-label="Hauptnavigation">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Zur Startseite">
+        <span class="brand-text">Interaktive Systeme · Projektarbeit</span>
+      </a>
+
+      <nav class="nav" aria-label="Seiten">
+        <a class="nav-link" href="index.html">Start</a>
+        <a class="nav-link active" href="methodik.html">Methodik &amp; Konzept</a>
+        <a class="nav-link" href="prototyp.html">Prototyp</a>
+        <a class="nav-link" href="dokumente.html">Dokumente</a>
+      </nav>
+
+      <a class="cta" href="https://horn-chorus-81122294.figma.site" target="_blank" rel="noopener noreferrer">
+        Prototyp öffnen →
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Seitenkopf -->
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">Methodik &amp; konzeptioneller Rahmen</h1>
+        <p class="section-lead">
+          Diese Seite beschreibt die theoretische Motivation, die zentrale Leitfrage sowie das
+          konzeptionelle Vorgehen der Projektarbeit im Modul <em>Interaktive Systeme</em>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Ausgangsproblem -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Ausgangsproblem</h2>
+        <p class="section-lead">
+          Direct-Manipulation-Interfaces basieren auf direkter Kontrolle, Transparenz und
+          unmittelbarem Feedback. Nutzer erwarten, dass ihre Handlungen klar nachvollziehbar
+          sind und sie jederzeit eingreifen können.
+        </p>
+
+        <div class="grid-2">
+          <article class="card">
+            <h3>Potenzial von Interface Agents</h3>
+            <p>
+              Interface Agents können Nutzer unterstützen, indem sie Hinweise geben,
+              Erinnerungen aussprechen oder Vorschläge machen. Richtig eingesetzt,
+              können sie Komplexität reduzieren und Orientierung bieten.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Risiken von Über-Automatisierung</h3>
+            <p>
+              Treffen Systeme Entscheidungen implizit oder ohne Erklärung,
+              kann dies zu Kontrollverlust, Unsicherheit und sinkendem Vertrauen führen.
+              Nutzer wissen dann nicht mehr, wer warum entschieden hat.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leitfrage -->
+    <section class="section">
+      <div class="container">
+        <div class="callout" role="note" aria-label="Leitfrage">
+          <h2 class="callout-title">Zentrale Leitfrage</h2>
+          <p class="callout-text">
+            Wie kann ein Interface Agent Nutzer in Direct-Manipulation-Umgebungen proaktiv unterstützen?
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Begriffe -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Zentrale Begriffe</h2>
+        <p class="section-lead">
+          Zur Einordnung des Projekts werden folgende Begriffe verwendet:
+        </p>
+
+        <div class="grid-2">
+          <article class="card">
+            <h3>Direct Manipulation</h3>
+            <p>
+              Ein Interaktionsparadigma, bei dem Nutzer direkt mit sichtbaren
+              Objekten interagieren und sofortiges Feedback erhalten.
+              Typisch ist ein hohes Maß an wahrgenommener Kontrolle.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Interface Agent</h3>
+            <p>
+              Ein softwarebasierter Agent, der Nutzer im Interaktionsprozess
+              unterstützt – etwa durch Erklärungen, Vorschläge oder Erinnerungen.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Automatisierung / Autonomie</h3>
+            <p>
+              Beschreibt, in welchem Maß ein System selbstständig Entscheidungen
+              trifft oder Aktionen ausführt, ohne direkte Nutzerinteraktion.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>User Agency</h3>
+            <p>
+              Das subjektive Gefühl, selbst Kontrolle über Handlungen und
+              Entscheidungen im System zu haben und Verantwortung zu tragen.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Konzept -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Konzept der drei Agenten-Modi</h2>
+        <p class="section-lead">
+          Um die Auswirkungen unterschiedlicher Autonomiegrade vergleichbar zu machen,
+          wurde ein Prototyp mit drei klar abgegrenzten Modi entwickelt.
+          Die Benutzeroberfläche bleibt dabei identisch – nur das Verhalten des Systems variiert.
+        </p>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>No Agent</h3>
+            <p>
+              Es findet keine agentenbasierte Unterstützung statt.
+              Alle Entscheidungen werden vollständig vom Nutzer getroffen.
+              Dies dient als Referenz für maximale Kontrolle.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Over-Automated Agent</h3>
+            <p>
+              Das System trifft implizite Entscheidungen oder nimmt dem Nutzer
+              Handlungsschritte ab, ohne diese ausreichend zu erklären.
+              Dieser Modus verdeutlicht Risiken von Kontrollverlust.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Assistive Agent</h3>
+            <p>
+              Der Agent unterstützt durch Erklärungen, Hinweise und Vorschläge.
+              Entscheidungen bleiben bewusst beim Nutzer, um Agency zu erhalten.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Annahmen -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Annahmen und Zielsetzung</h2>
+
+        <div class="grid-2">
+          <article class="card">
+            <h3>Annahmen</h3>
+            <ul>
+              <li>Über-Automatisierung reduziert das Gefühl von Kontrolle.</li>
+              <li>Erklärende Assistenz kann Vertrauen fördern.</li>
+              <li>Transparenz ist entscheidend für Akzeptanz von Agenten.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Ziel der Untersuchung</h3>
+            <p>
+              Ziel ist es, anhand des Prototyps sichtbar zu machen,
+              wie sich unterschiedliche Agenten-Strategien auf
+              Kontrolle, Nachvollziehbarkeit und Nutzererleben auswirken.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" aria-label="Footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="footer-title">Interface Agents in Direct-Manipulation-Umgebungen</div>
+        <div class="footer-meta">Interaktive Systeme · <span id="year"></span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

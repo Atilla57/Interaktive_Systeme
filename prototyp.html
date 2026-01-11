@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prototyp – Interaktive Systeme</title>
+  <meta name="description" content="Interaktiver Prototyp (Figma Make) mit drei Agenten-Modi: No Agent, Over-Automated, Assistive." />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Kleine Zusatz-Styles nur für diese Seite (Embed-Box + Table) -->
+  <style>
+    .embed{
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    }
+    .embed-head{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px 12px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
+    }
+    .embed-title{
+      margin:0;
+      font-size: 15px;
+      letter-spacing: -0.2px;
+      color: var(--text);
+    }
+    .embed-note{
+      margin:0;
+      color: var(--muted2);
+      font-size: 13px;
+      max-width: 70ch;
+    }
+    .embed-body{
+      padding: 16px;
+    }
+    .embed-placeholder{
+      border-radius: 14px;
+      border: 1px dashed rgba(255,255,255,0.18);
+      padding: 18px;
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .table-wrap{
+      overflow-x: auto;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    }
+    table{
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 820px;
+    }
+    th, td{
+      padding: 12px 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      vertical-align: top;
+      font-size: 14px;
+    }
+    th{
+      text-align: left;
+      color: var(--text);
+      background: rgba(255,255,255,0.04);
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    td{ color: var(--muted); }
+    .mode-list{
+      margin: 8px 0 0 18px;
+      color: var(--muted);
+    }
+    .tag{
+      display:inline-flex;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      color: var(--muted);
+      font-size: 12px;
+      margin-right: 6px;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header" aria-label="Hauptnavigation">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Zur Startseite">
+        <span class="brand-text">Interaktive Systeme · Projektarbeit</span>
+      </a>
+
+      <nav class="nav" aria-label="Seiten">
+        <a class="nav-link" href="index.html">Start</a>
+        <a class="nav-link" href="methodik.html">Methodik &amp; Konzept</a>
+        <a class="nav-link active" href="prototyp.html">Prototyp</a>
+        <a class="nav-link" href="dokumente.html">Dokumente</a>
+      </nav>
+
+      <a class="cta" href="https://horn-chorus-81122294.figma.site" target="_blank" rel="noopener noreferrer">
+        Prototyp öffnen →
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Seitenkopf -->
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">Interaktiver Prototyp</h1>
+        <p class="section-lead">
+          Der Prototyp (Figma Make) demonstriert drei Autonomiegrade von Interface Agents in einer
+          Direct-Manipulation-Umgebung. Die Oberfläche bleibt bewusst gleich – nur das Verhalten des Systems ändert sich.
+        </p>
+
+        <div class="callout" role="note" aria-label="Kurzbeschreibung">
+          <h2 class="callout-title">Wie man den Prototyp nutzt</h2>
+          <p class="callout-text">
+            Wechsle über den Slider zwischen <strong>No Agent</strong>, <strong>Over-Automated Agent</strong> und <strong>Assistive Agent</strong>
+            und beobachte, wie sich Transparenz, Nachvollziehbarkeit und Kontrollgefühl verändern.
+          </p>
+          <div class="callout-actions">
+            <a class="btn btn-primary" href="https://horn-chorus-81122294.figma.site" target="_blank" rel="noopener noreferrer">Prototyp öffnen</a>
+            <a class="btn" href="#vergleich">Zum Vergleich</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Embed / Platzhalter -->
+    <section class="section">
+      <div class="container">
+        <div class="embed" aria-label="Prototyp Vorschau">
+          <div class="embed-head">
+            <div>
+              <p class="embed-title">Prototyp (Figma Make)</p>
+              <p class="embed-note">
+                Wenn Einbettung lokal nicht funktioniert, nutze den Button „Prototyp öffnen“ (oben rechts).
+              </p>
+            </div>
+            <a class="btn btn-primary" href="https://horn-chorus-81122294.figma.site" target="_blank" rel="noopener noreferrer">In neuem Tab öffnen</a>
+          </div>
+
+          <div class="embed-body">
+            <!-- Optional: Falls du später ein iframe einbetten willst, ersetze den Platzhalter.
+                 Achtung: Einige Dienste blocken iframe-Embedding. -->
+            <div class="embed-placeholder">
+              <strong>Hinweis:</strong> Hier kann optional eine Vorschau/Einbettung stehen. <br />
+              Lokal ist ein stabiler Weg: den Prototyp über den Link öffnen. <br /><br />
+              Link-Platzhalter: <code>https://horn-chorus-81122294.figma.site</code>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modi erklärt -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Die drei Modi im Überblick</h2>
+        <p class="section-lead">
+          Jeder Modus repräsentiert eine andere Agentenstrategie. Ziel ist ein klarer Vergleich von Unterstützung
+          versus Kontrolle in einer Direct-Manipulation-Logik.
+        </p>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>No Agent <span class="tag">Default</span></h3>
+            <p>
+              Reine Direct Manipulation: Der Nutzer entscheidet und handelt vollständig selbst.
+              Es gibt keine proaktive Unterstützung und keine impliziten Systementscheidungen.
+            </p>
+            <ul class="mode-list">
+              <li>Maximale Kontrolle</li>
+              <li>Hohe Nachvollziehbarkeit</li>
+              <li>Risiko: weniger Orientierung bei Unsicherheit</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Over-Automated Agent</h3>
+            <p>
+              Das System trifft Entscheidungen implizit oder führt Aktionen aus, ohne diese klar zu erklären.
+              Dieser Modus dient als Kontrastfall, um Risiken von Über-Automatisierung sichtbar zu machen.
+            </p>
+            <ul class="mode-list">
+              <li>Schnelle Ausführung</li>
+              <li>Geringere Transparenz</li>
+              <li>Risiko: Kontrollverlust / Unsicherheit</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Assistive Agent</h3>
+            <p>
+              Unterstützt durch Erklärungen, Erinnerungen und Vorschläge – die Entscheidung bleibt beim Menschen.
+              Fokus auf Transparenz, Eingriffsmöglichkeiten und Agency-Erhalt.
+            </p>
+            <ul class="mode-list">
+              <li>Hohe Transparenz (durch Erklärungen)</li>
+              <li>Nutzer entscheidet final</li>
+              <li>Risiko: Overload, wenn zu „chatty“</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vergleichstabelle -->
+    <section class="section" id="vergleich">
+      <div class="container">
+        <h2 class="section-title">Vergleich der Modi</h2>
+        <p class="section-lead">
+          Die folgende Tabelle fasst die Unterschiede zusammen. Sie dient als schnelle Orientierung beim Testen.
+        </p>
+
+        <div class="table-wrap" aria-label="Vergleichstabelle">
+          <table>
+            <thead>
+              <tr>
+                <th>Kriterium</th>
+                <th>No Agent</th>
+                <th>Over-Automated Agent</th>
+                <th>Assistive Agent</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Entscheidungsfindung</td>
+                <td>Nutzer entscheidet</td>
+                <td>Agent entscheidet implizit</td>
+                <td>Nutzer entscheidet, Agent unterstützt</td>
+              </tr>
+              <tr>
+                <td>Transparenz</td>
+                <td>hoch</td>
+                <td>niedrig bis unklar</td>
+                <td>hoch (durch Erklärungen)</td>
+              </tr>
+              <tr>
+                <td>Eingriffsmöglichkeiten</td>
+                <td>jederzeit</td>
+                <td>oft verspätet/unklar</td>
+                <td>gezielt, bewusst angeboten</td>
+              </tr>
+              <tr>
+                <td>Unterbrechungen</td>
+                <td>keine</td>
+                <td>potenziell unerwartet</td>
+                <td>kontextuell & steuerbar</td>
+              </tr>
+              <tr>
+                <td>Wahrgenommene Kontrolle (Agency)</td>
+                <td>maximal</td>
+                <td>reduziert</td>
+                <td>erhalten/gestützt</td>
+              </tr>
+              <tr>
+                <td>Typisches Risiko</td>
+                <td>fehlende Orientierung</td>
+                <td>Kontrollverlust, Misstrauen</td>
+                <td>zu viel Assistenz, wenn übertrieben</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="height:16px;"></div>
+
+        <div class="grid-2">
+          <article class="card">
+            <h3>Design-Prinzipien (kompakt)</h3>
+            <ul>
+              <li>Erklären statt ungefragt ausführen</li>
+              <li>Vor Aktionen: ankündigen & um Zustimmung bitten</li>
+              <li>Undo / Rückgängig und Abbrechen anbieten</li>
+              <li>Klare Hinweise: „Was passiert?“ und „Warum passiert das?“</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Weiterführend</h3>
+            <p>
+              Details zur theoretischen Einordnung findest du unter
+              <a href="methodik.html">Methodik &amp; Konzept</a>.
+              Materialien und PDFs sind unter <a href="dokumente.html">Dokumente</a> gesammelt.
+            </p>
+            <div style="height:10px;"></div>
+            <a class="btn btn-primary" href="https://horn-chorus-81122294.figma.site" target="_blank" rel="noopener noreferrer">
+              Prototyp öffnen
+            </a>
+          </article>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" aria-label="Footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="footer-title">Interface Agents in Direct-Manipulation-Umgebungen</div>
+        <div class="footer-meta">Interaktive Systeme · <span id="year"></span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

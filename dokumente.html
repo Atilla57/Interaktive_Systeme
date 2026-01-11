@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dokumente – Interaktive Systeme</title>
+  <meta name="description" content="Dokumente und Materialien zur Projektarbeit: PDFs, Folien und weitere Unterlagen." />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* Kleine Zusatz-Styles nur für diese Seite (Dokumenten-Karten) */
+    .doc-grid{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    @media (max-width: 920px){
+      .doc-grid{ grid-template-columns: 1fr; }
+    }
+    .doc-card{
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .doc-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .doc-title{
+      margin:0;
+      font-size: 16px;
+      letter-spacing: -0.2px;
+    }
+    .doc-meta{
+      color: var(--muted2);
+      font-size: 13px;
+      margin: 2px 0 0;
+    }
+    .doc-desc{
+      margin:0;
+      color: var(--muted);
+      font-size: 14.5px;
+    }
+    .doc-actions{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .pill{
+      display:inline-flex;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    .small-note{
+      color: var(--muted2);
+      font-size: 13px;
+      margin: 0;
+    }
+    code{
+      background: rgba(255,255,255,0.06);
+      padding: 2px 6px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.10);
+      color: rgba(255,255,255,0.85);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header" aria-label="Hauptnavigation">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Zur Startseite">
+        <span class="brand-text">Interaktive Systeme · Projektarbeit</span>
+      </a>
+
+      <nav class="nav" aria-label="Seiten">
+        <a class="nav-link" href="index.html">Start</a>
+        <a class="nav-link" href="methodik.html">Methodik &amp; Konzept</a>
+        <a class="nav-link" href="prototyp.html">Prototyp</a>
+        <a class="nav-link active" href="dokumente.html">Dokumente</a>
+      </nav>
+
+      <a class="cta" href="https://horn-chorus-81122294.figma.site" target="_blank" rel="noopener noreferrer">
+        Prototyp öffnen →
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Seitenkopf -->
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">Dokumente &amp; Materialien</h1>
+        <p class="section-lead">
+          Hier sammeln wir projektbezogene Unterlagen (PDFs, Folien, ergänzende Dokumentation).
+          Die Inhalte unterstützen die Einordnung des Prototyps und dienen als Abgabe-/Präsentationsmaterial.
+        </p>
+
+        <div class="callout" role="note" aria-label="Hinweis">
+          <h2 class="callout-title">Hinweis zur lokalen Nutzung</h2>
+          <p class="callout-text">
+            Wenn du PDFs lokal einbinden willst, lege sie z. B. in einen Ordner <code>docs/</code> und verlinke sie dann hier.
+            Alternativ funktionieren auch Online-Links (z. B. Cloud/Drive).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dokumente -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Dokumentenliste</h2>
+        <p class="section-lead">
+          Platzhalter können später durch echte Links ersetzt werden.
+        </p>
+
+        <div class="doc-grid" aria-label="Dokumentenkarten">
+          <!-- 1 -->
+          <article class="doc-card">
+            <div class="doc-top">
+              <div>
+                <h3 class="doc-title">Projektbeschreibung (PDF)</h3>
+                <p class="doc-meta">
+                  <span class="pill">PDF</span>
+                  <span class="pill">Überblick</span>
+                </p>
+              </div>
+            </div>
+            <p class="doc-desc">
+              Kurze Zusammenfassung des Projekts: Kontext, Ziel, Leitfrage, Artefakte, Link zum Prototyp.
+            </p>
+            <div class="doc-actions">
+              <a class="btn btn-primary" href="PDF_LINK_1_HERE" target="_blank" rel="noopener noreferrer">Öffnen</a>
+              <a class="btn" href="PDF_LINK_1_HERE" download>Download</a>
+            </div>
+            <p class="small-note">Platzhalter-Link: <code>PDF_LINK_1_HERE</code></p>
+          </article>
+
+          <!-- 2 -->
+          <article class="doc-card">
+            <div class="doc-top">
+              <div>
+                <h3 class="doc-title">Methodik &amp; Konzept (PDF)</h3>
+                <p class="doc-meta">
+                  <span class="pill">PDF</span>
+                  <span class="pill">Theorie</span>
+                </p>
+              </div>
+            </div>
+            <p class="doc-desc">
+              Theoretischer Rahmen: Direct Manipulation, Interface Agents, Autonomie/Automatisierung, User Agency.
+            </p>
+            <div class="doc-actions">
+              <a class="btn btn-primary" href="PDF_LINK_2_HERE" target="_blank" rel="noopener noreferrer">Öffnen</a>
+              <a class="btn" href="PDF_LINK_2_HERE" download>Download</a>
+            </div>
+            <p class="small-note">Platzhalter-Link: <code>PDF_LINK_2_HERE</code></p>
+          </article>
+
+          <!-- 3 -->
+          <article class="doc-card">
+            <div class="doc-top">
+              <div>
+                <h3 class="doc-title">Präsentationsfolien (PDF)</h3>
+                <p class="doc-meta">
+                  <span class="pill">PDF</span>
+                  <span class="pill">Slides</span>
+                </p>
+              </div>
+            </div>
+            <p class="doc-desc">
+              Folien für die Vorstellung: Problem → Leitfrage → Prototyp-Modi → Learnings/Implikationen.
+            </p>
+            <div class="doc-actions">
+              <a class="btn btn-primary" href="PDF_LINK_3_HERE" target="_blank" rel="noopener noreferrer">Öffnen</a>
+              <a class="btn" href="PDF_LINK_3_HERE" download>Download</a>
+            </div>
+            <p class="small-note">Platzhalter-Link: <code>PDF_LINK_3_HERE</code></p>
+          </article>
+
+          <!-- 4 -->
+          <article class="doc-card">
+            <div class="doc-top">
+              <div>
+                <h3 class="doc-title">Weitere Materialien</h3>
+                <p class="doc-meta">
+                  <span class="pill">Optional</span>
+                  <span class="pill">Links</span>
+                </p>
+              </div>
+            </div>
+            <p class="doc-desc">
+              Optional: Forschungsnotizen, Evaluationsplan, Screenshots, Poster, Literaturhinweise oder kurze Demo-Videos.
+            </p>
+            <div class="doc-actions">
+              <a class="btn btn-primary" href="LINK_MATERIALIEN_HERE" target="_blank" rel="noopener noreferrer">Öffnen</a>
+            </div>
+            <p class="small-note">Platzhalter-Link: <code>LINK_MATERIALIEN_HERE</code></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projektkontext -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Projektkontext</h2>
+        <p class="section-lead">
+          Kurze Einordnung der Artefakte und wofür sie gedacht sind.
+        </p>
+
+        <div class="grid-2">
+          <article class="card">
+            <h3>Artefakte</h3>
+            <ul>
+              <li><strong>Website:</strong> Kontext + Konzept + Verlinkung</li>
+              <li><strong>Prototyp (Figma Make):</strong> erfahrbarer Vergleich der Modi</li>
+              <li><strong>Dokumente:</strong> Abgabe-/Präsentationsmaterial</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Nutzungshinweis</h3>
+            <p>
+              Der Prototyp ist ein Demonstrator zur Exploration. Er zeigt Design-Alternativen und
+              soll Unterschiede zwischen Autonomiegraden sichtbar machen – nicht ein fertiges Produkt darstellen.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" aria-label="Footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="footer-title">Interface Agents in Direct-Manipulation-Umgebungen</div>
+        <div class="footer-meta">Interaktive Systeme · <span id="year"></span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

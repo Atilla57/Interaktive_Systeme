@@ -87,14 +87,21 @@ a:hover{ text-decoration: underline; }
 }
 
 .nav{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
   flex: 1 1 auto;
   min-width: 260px;
+
   justify-content: flex-end;
+
   flex-wrap: nowrap;
   overflow-x: auto;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
 }
+
 
 .nav-link{
   font-size: 14px;

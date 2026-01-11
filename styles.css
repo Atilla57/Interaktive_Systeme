@@ -212,6 +212,7 @@ a.card:focus-visible{
   border: 1px solid transparent;
   transition: 150ms ease;
   text-decoration: none; /* Navigation nicht unterstreichen */
+  
 }
 .nav-link:hover{
   color: var(--text);
@@ -223,6 +224,11 @@ a.card:focus-visible{
   color: var(--text);
   border-color: rgba(90,167,255,0.35);
   background: rgba(90,167,255,0.10);
+}
+.nav-link[aria-current="page"]{
+  color: var(--text);
+  background: rgba(90,167,255,0.14);
+  border: 1px solid rgba(90,167,255,0.35);
 }
 
 .cta{

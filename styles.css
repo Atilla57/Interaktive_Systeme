@@ -17,23 +17,87 @@
 
 }
 
+
+.breadcrumb {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.breadcrumb a {
+  color: #5aa0ff;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+
+/* === Zwei-Spalten-Layout (fix für Methodik) === */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+/* === Klickbare Karten === */
+a.card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+a.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.card.card-rq {
+  background: linear-gradient(
+    180deg,
+    rgba(90, 160, 255, 0.08),
+    rgba(90, 160, 255, 0.03)
+  );
+  border: 1px solid rgba(90, 160, 255, 0.4);
+}
+
+
+.card.card-rq:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(90, 160, 255, 0.15),
+    rgba(90, 160, 255, 0.06)
+  );
+  border-color: rgba(90, 160, 255, 0.7);
+}
+
+.callout-text.text{
+  text-align: center;
+  font-size: large;
+  font-weight: bolder;
+}
+
 *{ box-sizing: border-box; }
 html, body{ height: 100%; }
-body{
+body {
   margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", sans-serif;
   color: var(--text);
 
-  /* GLOBAL background image + dark overlay for readability */
-  background-image:
-    linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.78)),
-    url("../assets/hero-bg.png");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  /* GLOBAL neutral dark gradient (no image) */
+  background: linear-gradient(
+    180deg,
+    #1c1c1c 0%,
+    #232323 40%,
+    #2a2a2a 100%
+  );
 
+  background-attachment: fixed;
   line-height: 1.55;
 }
+
 
 
 a{ color: var(--accent2); text-decoration: none; }
@@ -201,11 +265,11 @@ h1{
 
 /* Sections */
 .section{
-  padding: 34px 0;
+  padding: 10px 0;
 }
 .section-title{
-  font-size: 22px;
-  margin: 0 0 10px;
+  font-size: 18px;
+  margin: 0 0 5px;
   letter-spacing: -0.2px;
 }
 .section-lead{

@@ -33,145 +33,93 @@
     <!-- Seitenkopf -->
     <section class="section">
       <div class="container">
-        <h1 class="section-title">Methodik &amp; konzeptioneller Rahmen</h1>
+        <h2 class="section">Methodik &amp; konzeptioneller Rahmen</h1>
         <p class="section-lead">
-          Diese Seite beschreibt die theoretische Motivation, die zentrale Leitfrage sowie das
-          konzeptionelle Vorgehen der Projektarbeit im Modul <em>Interaktive Systeme</em>.
+          Diese Seite beschreibt die theoretische Einordnung, die zentrale Leitfrage
+          sowie die zugrundeliegenden Forschungsfragen der Projektarbeit im Modul
+          <em>Interaktive Systeme</em>.
         </p>
-      </div>
-    </section>
-
-    <!-- Ausgangsproblem -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Ausgangsproblem</h2>
-        <p class="section-lead">
-          Direct-Manipulation-Interfaces basieren auf direkter Kontrolle, Transparenz und
-          unmittelbarem Feedback. Nutzer erwarten, dass ihre Handlungen klar nachvollziehbar
-          sind und sie jederzeit eingreifen können.
-        </p>
-
-        <div class="grid-2">
-          <article class="card">
-            <h3>Potenzial von Interface Agents</h3>
-            <p>
-              Interface Agents können Nutzer unterstützen, indem sie Hinweise geben,
-              Erinnerungen aussprechen oder Vorschläge machen. Richtig eingesetzt,
-              können sie Komplexität reduzieren und Orientierung bieten.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Risiken von Über-Automatisierung</h3>
-            <p>
-              Treffen Systeme Entscheidungen implizit oder ohne Erklärung,
-              kann dies zu Kontrollverlust, Unsicherheit und sinkendem Vertrauen führen.
-              Nutzer wissen dann nicht mehr, wer warum entschieden hat.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Leitfrage -->
-    <section class="section">
-      <div class="container">
-        <div class="callout" role="note" aria-label="Leitfrage">
-          <h2 class="callout-title">Zentrale Leitfrage</h2>
-          <p class="callout-text">
-            Wie kann ein Interface Agent Nutzer in Direct-Manipulation-Umgebungen proaktiv unterstützen?
-          </p>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- Begriffe -->
-    <section class="section">
-      <div class="container">
         <h2 class="section-title">Zentrale Begriffe</h2>
         <p class="section-lead">
-          Zur Einordnung des Projekts werden folgende Begriffe verwendet:
+          Die folgenden Begriffe bilden die konzeptionelle Grundlage des Projekts.
+          Basierend auf diesen Begriffen wird im Folgenden die Forschungsfrage, sowie auch
+          die zusammenhängenden Teilfragestellungen formuliert.
         </p>
 
         <div class="grid-2">
           <article class="card">
             <h3>Direct Manipulation</h3>
             <p>
-              Ein Interaktionsparadigma, bei dem Nutzer direkt mit sichtbaren
-              Objekten interagieren und sofortiges Feedback erhalten.
-              Typisch ist ein hohes Maß an wahrgenommener Kontrolle.
+              <em>Platzhalterdefinition.</em><br />
+              Direct Manipulation beschreibt ein Interaktionsparadigma, bei dem Nutzer
+              direkt mit sichtbaren Objekten interagieren und unmittelbares Feedback
+              auf ihre Handlungen erhalten. Entscheidungen bleiben jederzeit
+              nachvollziehbar und unter direkter Kontrolle der Nutzer.
             </p>
           </article>
 
           <article class="card">
             <h3>Interface Agent</h3>
             <p>
-              Ein softwarebasierter Agent, der Nutzer im Interaktionsprozess
-              unterstützt – etwa durch Erklärungen, Vorschläge oder Erinnerungen.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Automatisierung / Autonomie</h3>
-            <p>
-              Beschreibt, in welchem Maß ein System selbstständig Entscheidungen
-              trifft oder Aktionen ausführt, ohne direkte Nutzerinteraktion.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>User Agency</h3>
-            <p>
-              Das subjektive Gefühl, selbst Kontrolle über Handlungen und
-              Entscheidungen im System zu haben und Verantwortung zu tragen.
+              <em>Platzhalterdefinition.</em><br />
+              Ein Interface Agent ist ein softwarebasierter Akteur, der Nutzer während
+              der Interaktion unterstützt, etwa durch Hinweise, Vorschläge oder
+              automatisierte Handlungen im System.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Konzept -->
+    <section class ="section">
+      <div class="container">
+      <h2 class="section">Zentrale Leitfrage & Zugrundeliegende Forschungsfragen</h2>
+        <p class="section-lead">
+          Zur Beantwortung der zentralen Leitfrage wird das Thema in zwei
+          Teilfragestellungen untergliedert, wofür jeweils eine Literaturrecherche durchgeführt und anschließend
+          ein Poster hierfür erstellt wurde. Die jeweiligen Ergebnisse der Literaturrecherche sowie eine Ausarbeitung
+          dieser findet sich bei Klick auf die jeweiligen Cards.
+        </p>
+      </div>
+    </section>
+
+    <!-- Zentrale Leitfrage -->
     <section class="section">
       <div class="container">
-        <h2 class="section-title">Konzept der drei Agenten-Modi</h2>
-        <p class="section-lead">
-          Um die Auswirkungen unterschiedlicher Autonomiegrade vergleichbar zu machen,
-          wurde ein Prototyp mit drei klar abgegrenzten Modi entwickelt.
-          Die Benutzeroberfläche bleibt dabei identisch – nur das Verhalten des Systems variiert.
-        </p>
-
-        <div class="grid-3">
-          <article class="card">
-            <h3>No Agent</h3>
-            <p>
-              Es findet keine agentenbasierte Unterstützung statt.
-              Alle Entscheidungen werden vollständig vom Nutzer getroffen.
-              Dies dient als Referenz für maximale Kontrolle.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Over-Automated Agent</h3>
-            <p>
-              Das System trifft implizite Entscheidungen oder nimmt dem Nutzer
-              Handlungsschritte ab, ohne diese ausreichend zu erklären.
-              Dieser Modus verdeutlicht Risiken von Kontrollverlust.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Assistive Agent</h3>
-            <p>
-              Der Agent unterstützt durch Erklärungen, Hinweise und Vorschläge.
-              Entscheidungen bleiben bewusst beim Nutzer, um Agency zu erhalten.
-            </p>
-          </article>
+        <div class="callout callout-center" role="note" aria-label="Zentrale Leitfrage">
+          <p class="callout-text text">
+            Wie kann ein Interface Agent Nutzer in Direct-Manipulation-Umgebungen proaktiv unterstützen?
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Annahmen -->
+    <!-- Sub Research Questions -->
+    <section class="section">
+      <div class="container">
+        <div class="grid-2">
+          <a href="rq1-agent.html" class="card card-rq" aria-label="Zur Forschungsfrage RQ 1">
+            <h3>RQ 1: Interactive Agent</h3>
+            <p>
+              Wie wirkt sich zu viel Automatisierung auf die Zufriedenheit
+              und Verantwortung der Nutzer aus?
+            </p>
+            <p class="muted">→ zur Detailseite</p>
+          </a>
+
+          <a href="rq2-direct-manipulation.html" class="card card-rq" aria-label="Zur Forschungsfrage RQ 2">
+            <h3>RQ 2: Direct Manipulation</h3>
+            <p>
+              Welche Interface-Elemente unterstützen Nutzer dabei,
+              Funktionen nach einer Nutzungspause schneller wiederzufinden?
+            </p>
+            <p class="muted">→ zur Detailseite</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Annahmen & Zielsetzung -->
     <section class="section">
       <div class="container">
         <h2 class="section-title">Annahmen und Zielsetzung</h2>
@@ -180,21 +128,36 @@
           <article class="card">
             <h3>Annahmen</h3>
             <ul>
-              <li>Über-Automatisierung reduziert das Gefühl von Kontrolle.</li>
-              <li>Erklärende Assistenz kann Vertrauen fördern.</li>
-              <li>Transparenz ist entscheidend für Akzeptanz von Agenten.</li>
+              <li>Zu hohe Automatisierung kann das Gefühl von Kontrolle reduzieren.</li>
+              <li>Nutzer möchten unterstützt werden, ohne Verantwortung abzugeben.</li>
+              <li>Transparenz ist zentral für Vertrauen in Interface Agents.</li>
             </ul>
           </article>
 
           <article class="card">
-            <h3>Ziel der Untersuchung</h3>
+            <h3>Zielsetzung</h3>
             <p>
-              Ziel ist es, anhand des Prototyps sichtbar zu machen,
-              wie sich unterschiedliche Agenten-Strategien auf
-              Kontrolle, Nachvollziehbarkeit und Nutzererleben auswirken.
+              Ziel ist es, zu untersuchen, wie unterschiedliche Grade
+              agentenbasierter Unterstützung das Nutzererleben in
+              Direct-Manipulation-Umgebungen beeinflussen.
             </p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- Überleitung zum Prototyp -->
+    <section class="section">
+      <div class="container">
+        <article class="card">
+          <p>
+            Ausgehend von diesen Annahmen und theoretischen Überlegungen
+            wurde ein interaktiver Prototyp entwickelt. Dieser untersucht
+            insbesondere die Auswirkungen zu hoher Automatisierung durch
+            einen Interface Agent und stellt diese einer assistiven,
+            erklärenden Unterstützung gegenüber.
+          </p>
+        </article>
       </div>
     </section>
   </main>

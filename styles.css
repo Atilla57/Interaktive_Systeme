@@ -264,7 +264,7 @@ h1{
 .subtitle{
   margin: 0;
   color: rgba(255,255,255,0.82);
-  font-size: clamp(15px, 1.3vw, 18px);
+  font-size: clamp(19px, 1.3vw, 18px);
   max-width: 70ch;
 }
 

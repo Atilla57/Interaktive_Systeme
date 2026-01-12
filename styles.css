@@ -738,20 +738,21 @@ img {
   display: none; 
 }
 
-
+/* Mobile: Brand-Titel größer & zweizeilig */
 @media (max-width: 768px) {
-  .brand,
-  .brand-text {
-    display: inline-flex !important;
-    align-items: center;
+  .brand {
+    display: block;
+    max-width: 70%;
   }
 
   .brand-text {
-    font-size: 1rem;
-    font-weight: 600;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 60vw; /* damit neben dem Menü Platz bleibt */
+    display: block;
+    font-size: 1.1rem;      /* größer */
+    font-weight: 700;
+    line-height: 1.25;
+    white-space: normal;    /* erlaubt Zeilenumbruch */
+    overflow: visible;
+    text-overflow: unset;
   }
 }
+

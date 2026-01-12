@@ -738,3 +738,73 @@ img {
 .subnav-title { 
   display: none; 
 }
+
+/* Mobile: Brand-Titel größer & zweizeilig */
+@media (max-width: 768px) {
+  .brand {
+    display: block;
+    max-width: 70%;
+  }
+
+  .brand-text {
+    display: block;
+    font-size: 1.1rem;      /* größer */
+    font-weight: 700;
+    line-height: 1.25;
+    white-space: normal;    /* erlaubt Zeilenumbruch */
+    overflow: visible;
+    text-overflow: unset;
+  }
+}
+@media (max-width: 768px) {
+  /* Header: 2 Spalten -> links Titel, rechts Buttons */
+  .header-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Titel darf zweizeilig sein */
+  .brand {
+    max-width: 100%;
+  }
+  .brand-text {
+    display: block;
+    white-space: normal;
+    line-height: 1.2;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  /* Rechte Seite: CTA + Menü nebeneinander */
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+
+  /* Navigation auf Mobile als "Button-Zeile" */
+  .nav {
+    justify-self: end;
+  }
+
+  /* Details (Menü) neben CTA halten */
+  .nav-details {
+    display: inline-block;
+  }
+
+  /* Desktop-Linkblock auf Mobile ausblenden (falls nicht schon) */
+  .nav-desktop {
+    display: none;
+  }
+
+  /* Mobile: nav-panel bleibt Dropdown */
+  .nav-panel {
+    margin-top: 10px;
+  }
+}
+

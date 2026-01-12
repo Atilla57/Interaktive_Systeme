@@ -737,3 +737,21 @@ img {
 .subnav-title { 
   display: none; 
 }
+
+
+@media (max-width: 768px) {
+  .brand,
+  .brand-text {
+    display: inline-flex !important;
+    align-items: center;
+  }
+
+  .brand-text {
+    font-size: 1rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 60vw; /* damit neben dem Menü Platz bleibt */
+  }
+}

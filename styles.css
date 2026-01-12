@@ -1102,3 +1102,35 @@ img {
     white-space: nowrap !important;
   }
 }
+
+
+
+/* Mobile Burger: Unterstruktur */
+.nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-subgroup {
+  margin-left: 14px;
+  padding-left: 10px;
+  border-left: 2px solid rgba(255,255,255,0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-sublink {
+  font-size: 0.9rem;
+  color: var(--muted);
+  padding: 6px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.nav-sublink:hover,
+.nav-sublink:focus-visible {
+  color: var(--text);
+  background: rgba(255,255,255,0.06);
+}

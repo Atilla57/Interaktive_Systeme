@@ -808,3 +808,167 @@ img {
   }
 }
 
+/* ===== FIX: Mobile Header – Menü + CTA nebeneinander ===== */
+@media (max-width: 640px) {
+  /* Header nicht umbrechen lassen */
+  .header-inner {
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
+
+  /* Brand darf zweizeilig sein, aber nicht alles blockieren */
+  .brand {
+    min-width: 0;
+    max-width: 58%;
+  }
+
+  .brand-text {
+    white-space: normal;
+    line-height: 1.2;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  /* Nav rechts als Zeile für CTA + Menü */
+  .nav {
+    flex: 0 0 auto;
+    min-width: 0;
+    width: auto;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  /* CTA darf NICHT full width sein */
+  .cta-mobile {
+    width: auto !important;
+    justify-content: center;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+}
+/* ===== Mobile Header: Titel oben, Buttons darunter ===== */
+@media (max-width: 640px) {
+  /* Header untereinander */
+  .header-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  /* Titel: einzeilig */
+  .brand {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .brand-text {
+    font-size: 1rem;
+    font-weight: 700;
+    white-space: nowrap;     /* EINZEILIG */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Untere Zeile: CTA + Menü nebeneinander */
+  .nav {
+    flex: 0 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* CTA nicht full width */
+  .cta {
+    width: auto !important;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+
+  /* Menü-Button stabil */
+  .nav-summary {
+    white-space: nowrap;
+  }
+}
+/* ===== FINAL Mobile Header Layout ===== */
+@media (max-width: 640px) {
+
+  /* Header in 2 Zeilen aufteilen */
+  .header-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 16px;
+  }
+
+  /* Titel: größer & mittig */
+  .brand {
+    max-width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .brand-text {
+    font-size: 1.25rem;      /* größer */
+    font-weight: 700;
+    line-height: 1.25;
+    white-space: normal;
+    text-align: center;
+    color: var(--text);
+  }
+
+  /* Untere Zeile: CTA + Menü */
+  .nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+
+  /* CTA kompakt */
+  .cta {
+    width: auto !important;
+    padding: 10px 16px;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+
+  /* Menü-Button */
+  .nav-summary {
+    padding: 10px 14px;
+    white-space: nowrap;
+  }
+}
+/* FIX: Mobile – CTA + Menü nebeneinander */
+@media (max-width: 640px) {
+  /* Buttons-Zeile */
+  .nav{
+    width: 100%;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: nowrap !important;
+  }
+
+  /* CTA darf NICHT 100% breit sein */
+  .cta{
+    width: auto !important;
+    flex: 0 0 auto !important;
+    white-space: nowrap;
+  }
+
+  /* Menü-Button ebenfalls nicht umbrechen */
+  .nav-details{
+    flex: 0 0 auto !important;
+  }
+
+  .nav-summary{
+    white-space: nowrap;
+  }
+}

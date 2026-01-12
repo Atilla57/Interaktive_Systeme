@@ -1134,3 +1134,21 @@ img {
   color: var(--text);
   background: rgba(255,255,255,0.06);
 }
+/* ===== FIX: kein horizontales "leeres Wischen" ===== */
+html, body{
+  width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 640px){
+  .nav{
+    overflow-x: visible !important;
+    white-space: normal !important;
+  }
+}
+
+object, iframe{
+  max-width: 100%;
+  width: 100%;
+  display: block;
+}

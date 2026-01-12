@@ -944,3 +944,31 @@ img {
     white-space: nowrap;
   }
 }
+/* FIX: Mobile – CTA + Menü nebeneinander */
+@media (max-width: 640px) {
+  /* Buttons-Zeile */
+  .nav{
+    width: 100%;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: nowrap !important;
+  }
+
+  /* CTA darf NICHT 100% breit sein */
+  .cta{
+    width: auto !important;
+    flex: 0 0 auto !important;
+    white-space: nowrap;
+  }
+
+  /* Menü-Button ebenfalls nicht umbrechen */
+  .nav-details{
+    flex: 0 0 auto !important;
+  }
+
+  .nav-summary{
+    white-space: nowrap;
+  }
+}

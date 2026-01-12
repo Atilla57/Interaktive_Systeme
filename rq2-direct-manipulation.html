@@ -18,8 +18,15 @@
 
       <nav class="nav" aria-label="Seiten">
         <a class="nav-link" href="index.html">Start</a>
-        <a class="nav-link" href="methodik.html">Methodik &amp; Konzept</a>
-        <a class="nav-link active" href="rq2-direct-manipulation.html">RQ 2</a>
+        <div class="nav-item has-subnav">
+          <a class="nav-link active" href="methodik.html">Methodik &amp; Konzept</a>
+
+          <div class="subnav">
+            <div class="subnav-title">Unterseiten</div>
+            <a href="rq1-agent.html" class="subnav-link">RQ1</a>
+            <a href="rq2-direct-manipulation.html" class="subnav-link">RQ2</a>
+          </div>
+        </div>
         <a class="nav-link" href="prototyp.html">Prototyp</a>
         <a class="nav-link" href="dokumente.html">Dokumente</a>
         <a class="nav-link" href="rechtliche-hinweise.html" aria-current="page">
@@ -31,7 +38,7 @@
         Prototyp öffnen →
       </a>
     </div>
-  </header>
+
 
 
     <section class="section section-subnav">
@@ -44,16 +51,19 @@
     </div>
     </section>
 
+  </header>
 
   <main>
     <!-- Seitenkopf -->
     <section class="section">
       <div class="container">
+        <article class="card">
         <h1 class="section-title">RQ 2: Direct Manipulation</h1>
-        <p class="section-lead">
+        <p class="section-title">
           Welche Interface-Elemente unterstützen Nutzer dabei, Funktionen nach einer Nutzungspause schneller wiederzufinden?
         </p>
       </div>
+      </article>
     </section>
 
     <!-- Poster -->
@@ -62,99 +72,164 @@
         <article class="card">
           <h2 class="section-title">Poster</h2>
           <p class="section-lead">
-            Das folgende Poster fasst die Forschungsfrage, den theoretischen Hintergrund
-            sowie zentrale Erkenntnisse zu RQ 2 zusammen.
-          </p>
+            Das folgende Poster zeigt die Schriftliche Literaturrecherche - inklusive dem PRISMA-Flowchart, und fasst die Forschungsfrage, den theoretischen Hintergrund
+            sowie zentrale Erkenntnisse zu RQ 2 zusammen. Unter anderem werden mit diesen Erkenntnissen dann der Prototyp entworfen und wesentliche Elemente dort rekonstruiert.
+            
+          </p> <br>
 
-          <!-- Platzhalter für Poster -->
-          <div class="poster-wrapper">
-            <img
-              src="poster-rq2.png"
-              alt="Poster zu RQ 2: Direct Manipulation"
-              style="width: 100%; height: auto; border-radius: 12px;"
-            />
-          </div>
+          <div class="card" style="padding:16px;">
+            <h3>RQ2 – PDF Vorschau</h3>
+            <p class="muted">Das Dokument kann man direkt hier nachlesen.</p><br>
+
+            <object data="docs/Poster_PRISMA_Cetin_Final.pdf" type="application/pdf" width="100%" height="800">
+                <iframe src="docs/Poster_PRISMA_Cetin_Final.pdf" width="100%" height="800" style="border:0;"></iframe>
+
+                <p class="muted">
+                Dein Browser kann PDFs hier nicht anzeigen.
+                <a href="docs/Poster_PRISMA_Cetin_Final.pdf" target="_blank" rel="noopener noreferrer">PDF öffnen</a>
+                </p>
+            </object>
+            </div>
+
         </article>
       </div>
     </section>
 
-    <!-- Einordnung der Leitfrage -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Einordnung der Forschungsfrage</h2>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Einordnung der Forschungsfrage</h2>
+    <p>
+      Direct-Manipulation-Interfaces basieren auf direkter Kontrolle, sichtbaren Objekten und
+      unmittelbarem Feedback. Nutzer interagieren mit Funktionen, indem sie diese direkt manipulieren,
+      anstatt abstrakte Befehle auszuführen. Diese Interaktionsform gilt als besonders intuitiv, setzt
+      jedoch voraus, dass relevante Funktionen dauerhaft auffindbar bleiben.
+    </p>
+    <p>
+      In komplexen digitalen Systemen werden viele Funktionen jedoch nur sporadisch genutzt. Kehrt ein
+      Nutzer nach einer längeren Nutzungspause zu einem System zurück, fehlt häufig der mentale Kontext,
+      der zuvor eine schnelle Orientierung ermöglichte. Kobayashi (2013) beschreibt in einem
+      konzeptuellen Systementwurf für Smart-TV-Interfaces, dass Nutzer in solchen Situationen bekannte
+      Funktionen nicht mehr unmittelbar erkennen oder lokalisieren können, wenn diese nicht klar
+      sichtbar und konsistent angeordnet sind <sup>[1]</sup>.
+    </p>
+    <p>
+      RQ&nbsp;2 untersucht daher, welche Interface-Elemente in Direct-Manipulation-Umgebungen den
+      Wiedereinstieg unterstützen und die Wiederauffindbarkeit (Findability) von Funktionen nach
+      Nutzungspausen verbessern.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Zentrale Erkenntnisse aus der Literatur</h2>
+
+    <div class="grid-2">
+      <article class="card">
+        <h3>Orientierung durch klare Struktur und Navigation</h3>
         <p>
-          Direct-Manipulation-Interfaces leben von direkter Kontrolle, Sichtbarkeit und
-          unmittelbarem Feedback. Gleichzeitig enthalten moderne Systeme häufig viele
-          Funktionen, die nicht regelmäßig genutzt werden.
+          Ein zentrales Thema der Literatur zur Wiederauffindbarkeit ist die Bedeutung stabiler
+          Navigations- und Strukturkonzepte. Kobayashi (2013) hebt hervor, dass insbesondere nach
+          Nutzungspausen konsistente Benennungen und logisch aufgebaute Navigationspfade entscheidend
+          sind, um vorhandenes Wissen wieder aktivieren zu können <sup>[1]</sup>.
         </p>
         <p>
-          Nach Nutzungspausen entsteht dadurch häufig das Problem, dass bekannte
-          Funktionen nicht mehr schnell auffindbar sind. Diese Forschungsfrage untersucht,
-          welche Interface-Elemente den Wiedereinstieg erleichtern und die Findability
-          (Wiederauffindbarkeit) unterstützen können.
+          Arbeiten aus dem Bereich der Informationsarchitektur zeigen, dass klar strukturierte
+          Navigationspfade und eindeutige Kategorisierungen den Suchaufwand reduzieren, während unklare
+          oder inkonsistente Strukturen zu erhöhter kognitiver Belastung führen <sup>[2]</sup>. Für
+          Direct-Manipulation-Interfaces bedeutet dies, dass Funktionen nicht nur sichtbar, sondern
+          dauerhaft erwartbar platziert sein müssen.
         </p>
-      </div>
-    </section>
+      </article>
 
-    <!-- Beantwortung / Kernaussagen -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Zentrale Erkenntnisse (Platzhalter)</h2>
-
-        <div class="grid-2">
-          <article class="card">
-            <h3>Orientierung &amp; Navigation</h3>
-            <p>
-              <em>Platzhalter.</em><br />
-              Nutzer profitieren von klaren Navigationsstrukturen, konsistenter Benennung
-              und sichtbaren Einstiegspunkten. Besonders nach Unterbrechungen helfen
-              „stabile“ Pfade, um Funktionen wiederzufinden.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Re-Finding-Hinweise</h3>
-            <p>
-              <em>Platzhalter.</em><br />
-              Visuelle Hinweise, Verlauf/History-Elemente, „zuletzt genutzt“-Bereiche oder
-              Markierungen können den Kontext wiederherstellen und Suchaufwand reduzieren.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Bezug zum Prototyp -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Bezug zum Prototyp</h2>
+      <article class="card">
+        <h3>Unterstützung des Wiedereinstiegs durch Re-Finding-Mechanismen</h3>
         <p>
-          Die im Poster dargestellten Ansätze zur Wiederauffindbarkeit wurden als Grundlage
-          für das Interface-Design und die unterstützenden Hinweise im Prototyp verwendet.
+          Über klassische Navigation hinaus beschreiben mehrere Arbeiten Mechanismen, die den
+          Wiedereinstieg aktiv unterstützen. Abela und Staff (2016) analysieren Nutzungshistorien und
+          beschreiben sogenannte Task-Keeping-Mechanismen, bei denen frühere Aktionen und Kontexte
+          visualisiert werden, um den mentalen Rekonstruktionsaufwand zu reduzieren <sup>[3]</sup>.
         </p>
         <p>
-          <em>
-            Platzhalter: Hier wird später beschrieben, welche konkreten Elemente aus dem
-            Poster im Prototyp umgesetzt wurden (z. B. visuelle Marker, „Recent“-Bereiche,
-            klare Navigationspfade etc.).
-          </em>
+          Im mobilen Kontext entwickeln Mariakakis et&nbsp;al. (2015) mit <em>SwitchBack</em> ein
+          System, das visuelle Fokusindikatoren nutzt, um Nutzer nach Unterbrechungen gezielt zu zuvor
+          relevanten Interface-Bereichen zurückzuführen <sup>[4]</sup>. Diese Ansätze zeigen, dass
+          Re-Finding-Hinweise besonders wirksam sind, wenn sie unterstützend wirken und keine zusätzliche
+          Komplexität erzeugen.
         </p>
-      </div>
-    </section>
+      </article>
+    </div>
+  </div>
+</section>
 
-    <!-- Zusammenfassung -->
-    <section class="section">
-      <div class="container">
-        <article class="card">
-          <h3>Zusammenfassung</h3>
-          <p>
-            Die Analyse von RQ 2 zeigt, dass Wiederauffindbarkeit nach Nutzungspausen
-            vor allem durch klare Struktur, Sichtbarkeit relevanter Funktionen und
-            unterstützende Hinweise für den Wiedereinstieg verbessert wird.
-          </p>
-        </article>
-      </div>
-    </section>
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Visuelle Hinweise und Kontextrekonstruktion</h2>
+    <p>
+      Neben Verlaufs- und History-Elementen spielt die gezielte Nutzung visueller Hinweise eine zentrale
+      Rolle beim Wiedereinstieg. Hervorhebungen, Fokusmarker oder Markierungen helfen Nutzern, relevante
+      Bereiche schneller zu identifizieren und den Nutzungskontext wiederherzustellen
+      <sup>[4]</sup>.
+    </p>
+    <p>
+      Neuere Arbeiten zeigen zudem, dass automatisch erzeugte Strukturierungshilfen wie Tags die
+      Auffindbarkeit in komplexen Datenräumen verbessern können. Kliimask und Nikiforova (2024)
+      beschreiben mit TAGIFY einen Ansatz, bei dem Inhalte durch automatisches Tagging neu
+      kontextualisiert werden, um Orientierungslücken zu reduzieren <sup>[5]</sup>.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Bezug zum Prototyp</h2>
+    <p>
+      Die Erkenntnisse aus RQ&nbsp;2 wurden gezielt in den entworfenen Prototyp übertragen. Die
+      Literaturergebnisse bilden die Grundlage für konkrete Interface-Entscheidungen und
+      unterstützende Elemente.
+    </p>
+    <ul>
+      <li>klare und konsistente Navigationsstruktur mit stabiler Platzierung zentraler Funktionen</li>
+      <li>„Recent“- bzw. Verlaufsbereiche zur Sichtbarmachung zuletzt genutzter Inhalte</li>
+      <li>visuelle Marker und Hervorhebungen zur Unterstützung des Wiedereinstiegs</li>
+      <li>bewusster Verzicht auf automatisierte Eingriffe zugunsten direkter Nutzerkontrolle</li>
+    </ul>
+    <p>
+      Der Prototyp stellt damit eine konkrete Umsetzung der identifizierten Gestaltungsprinzipien dar
+      und verbindet theoretische Erkenntnisse zur Wiederauffindbarkeit mit einer praktischen
+      Direct-Manipulation-Lösung.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <article class="card">
+      <h3>Zusammenfassung</h3>
+      <p>
+        Die Analyse von RQ&nbsp;2 zeigt, dass das Wiederauffinden von Funktionen nach Nutzungspausen vor
+        allem durch klare Struktur, konsistente Navigation sowie unterstützende Re-Finding- und
+        Markierungsmechanismen verbessert wird. Diese Elemente erleichtern den Wiedereinstieg, ohne die
+        Grundprinzipien der Direct Manipulation – Sichtbarkeit, Kontrolle und unmittelbares Feedback –
+        zu beeinträchtigen.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Quellen</h2>
+    <ol class="footnotes">
+      <li>Kobayashi, T. (2013). <em>A proposal of Smart TV System focused on findability.</em> Proceedings of the International Conference on Consumer Electronics (ICCE ’13). IEEE.</li>
+      <li>Notess, G. R. &amp; Dunn, K. (2004). <em>Improving information findability through information architecture.</em></li>
+      <li>Abela, C. &amp; Staff, C. (2016). <em>Behaviour Mining for Automatic Task-Keeping and Visualisations for Task-Refinding.</em> Proceedings of the International Conference on Multimedia Retrieval (ICMR ’16). ACM.</li>
+      <li>Mariakakis, A. et&nbsp;al. (2015). <em>SwitchBack: Using Focus and Saccade Tracking to Guide Users’ Attention for Mobile Task Resumption.</em> Proceedings of the 33rd Annual ACM Conference on Human Factors in Computing Systems (CHI ’15).</li>
+      <li>Kliimask, K. &amp; Nikiforova, A. (2024). <em>TAGIFY: Improving Findability in Complex Data Spaces through Automated Tagging.</em></li>
+    </ol>
+  </div>
+</section>
   </main>
 
   <!-- Footer -->

@@ -16,6 +16,16 @@
   --secondary-border: rgba(139,124,246,0.35);
 }
 
+/* Offset für Sprungmarken wegen sticky Header */
+:root{
+  --anchor-offset: 90px; /* ggf. auf 80–120px anpassen */
+}
+
+[id]{
+  scroll-margin-top: var(--anchor-offset);
+}
+
+
 /* ===== A11y/UX: Baseline ===== */
 *{ box-sizing: border-box; }
 
@@ -325,7 +335,6 @@ h1{
 .section-lead{
   margin: 0 0 18px;
   color: var(--muted);
-  max-width: 85ch;
 }
 
 /* Cards / Grids */
@@ -447,4 +456,144 @@ h1{
 @media (max-width: 920px){
   .grid-3{ grid-template-columns: 1fr; }
   .brand-text{ display: none; }
+}
+
+
+
+/* DOKU */
+/* === Prototyp-Doku: Screenshot links, Text rechts === */
+.doc-row {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.doc-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Optional: Bild-Card etwas "sticky", damit Text scrollt (nur wenn du willst) */
+@media (min-width: 1000px) {
+  .doc-media {
+    position: sticky;
+    top: 92px; /* ggf. an Headerhöhe anpassen */
+  }
+}
+
+.doc-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Mobile: untereinander */
+@media (max-width: 900px) {
+  .doc-row {
+    grid-template-columns: 1fr;
+  }
+  .doc-media {
+    position: static;
+  }
+}
+
+
+/* === Image Lightbox Overlay === */
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+
+.image-lightbox img {
+  max-width: 92vw;
+  max-height: 92vh;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+/* Optional: leichte Zoom-Cursor-Hilfe */
+img {
+  cursor: zoom-in;
+}
+
+@media (min-width: 1000px) {
+  .doc-media {
+    position: static !important;
+    top: auto !important;
+  }
+}
+
+
+/* ===== Subnavigation (Dropdown) ===== */
+
+.nav-item {
+  position: relative;
+}
+
+.has-subnav:hover .subnav {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.subnav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: 12px;
+
+  background: rgba(20,20,20,0.95);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: all 0.2s ease;
+  z-index: 1000;
+}
+
+.subnav-title {
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.subnav-link {
+  display: block;
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.subnav-link:hover {
+  background: rgba(255,255,255,0.06);
+}
+/* Dropdown darf nicht abgeschnitten werden */
+.site-header,
+.header-inner,
+.nav {
+  overflow: visible !important;
+}
+
+/* Sicherheit: Dropdown selbst soll NICHT scrollen */
+.subnav {
+  max-height: none !important;
+  overflow: visible !important;
 }

@@ -18,7 +18,15 @@
 
       <nav class="nav" aria-label="Seiten">
         <a class="nav-link" href="index.html">Start</a>
-        <a class="nav-link active" href="methodik.html">Methodik &amp; Konzept</a>
+        <div class="nav-item has-subnav">
+          <a class="nav-link active" href="methodik.html">Methodik &amp; Konzept</a>
+
+          <div class="subnav">
+            <div class="subnav-title">Unterseiten</div>
+            <a href="rq1-agent.html" class="subnav-link">RQ1</a>
+            <a href="rq2-direct-manipulation.html" class="subnav-link">RQ2</a>
+          </div>
+        </div>
         <a class="nav-link" href="prototyp.html">Prototyp</a>
         <a class="nav-link" href="dokumente.html">Dokumente</a>
         <a class="nav-link" href="rechtliche-hinweise.html" aria-current="page">
@@ -38,36 +46,44 @@
       <div class="container">
         <h1 class="section">Methodik &amp; konzeptioneller Rahmen</h1>
         <p class="section-lead">
-          Diese Seite beschreibt die theoretische Einordnung, die zentrale Leitfrage
-          sowie die zugrundeliegenden Forschungsfragen der Projektarbeit im Modul
-          <em>Interaktive Systeme</em>.
+          Diese Seite ordnet das Projekt theoretisch ein. Sie stellt die zentrale
+          Leitfrage vor und erklärt, auf welchen grundlegenden Konzepten und
+          Forschungsfragen die Arbeit aufbaut.
         </p>
+
         <h2 class="section-title">Zentrale Begriffe</h2>
         <p class="section-lead">
-          Die folgenden Begriffe bilden die konzeptionelle Grundlage des Projekts.
-          Basierend auf diesen Begriffen wird im Folgenden die Forschungsfrage, sowie auch
-          die zusammenhängenden Teilfragestellungen formuliert.
+          Die folgenden Begriffe sind zentral für das Projekt. Sie bilden die
+          Grundlage für die Leitfrage und die beiden Teilfragestellungen.
         </p>
 
         <div class="grid-2">
           <article class="card">
             <h3>Direct Manipulation</h3>
             <p>
-              <em>Platzhalterdefinition.</em><br />
-              Direct Manipulation beschreibt ein Interaktionsparadigma, bei dem Nutzer
-              direkt mit sichtbaren Objekten interagieren und unmittelbares Feedback
-              auf ihre Handlungen erhalten. Entscheidungen bleiben jederzeit
-              nachvollziehbar und unter direkter Kontrolle der Nutzer.
+              Direct Manipulation beschreibt eine Interaktionsform, bei der Nutzer direkt
+              mit sichtbaren Objekten im Interface arbeiten. Aktionen wie Anklicken,
+              Ziehen oder Ablegen führen sofort zu sichtbaren Ergebnissen.
+            </p>
+            <p>
+              Wichtig dabei ist, dass Nutzer jederzeit sehen, was im System passiert,
+              und dass Aktionen meist einfach rückgängig gemacht werden können.
+              Dadurch bleibt die Kontrolle klar beim Nutzer.<sup>[1]</sup>
             </p>
           </article>
 
           <article class="card">
             <h3>Interface Agent</h3>
             <p>
-              <em>Platzhalterdefinition.</em><br />
-              Ein Interface Agent ist ein softwarebasierter Akteur, der Nutzer während
-              der Interaktion unterstützt, etwa durch Hinweise, Vorschläge oder
-              automatisierte Handlungen im System.
+              Ein Interface Agent ist eine softwarebasierte Komponente, die Nutzer bei
+              ihrer Arbeit unterstützt. Er kann zum Beispiel Hinweise geben,
+              Vorschläge machen oder Aktionen vorbereiten.
+            </p>
+            <p>
+              Im Unterschied zur Direct Manipulation handelt ein Agent teilweise
+              eigenständig. Entscheidend ist dabei, dass Nutzer verstehen, was der
+              Agent tut, und jederzeit eingreifen oder Entscheidungen selbst treffen
+              können.<sup>[2][3]</sup>
             </p>
           </article>
         </div>
@@ -76,12 +92,12 @@
 
     <section class ="section">
       <div class="container">
-      <h2 class="section">Zentrale Leitfrage & Zugrundeliegende Forschungsfragen</h2>
+        <h2 class="section">Zentrale Leitfrage &amp; Zugrundeliegende Forschungsfragen</h2>
         <p class="section-lead">
-          Zur Beantwortung der zentralen Leitfrage wird das Thema in zwei
-          Teilfragestellungen untergliedert, wofür jeweils eine Literaturrecherche durchgeführt und anschließend
-          ein Poster hierfür erstellt wurde. Die jeweiligen Ergebnisse der Literaturrecherche sowie eine Ausarbeitung
-          dieser findet sich bei Klick auf die jeweiligen Cards.
+          Um die zentrale Leitfrage zu beantworten, wurde das Thema in zwei
+          Teilfragestellungen aufgeteilt. Für beide Fragen wurde jeweils eine
+          Literaturrecherche durchgeführt und in einem Poster zusammengefasst.
+          Die detaillierten Ergebnisse finden sich auf den jeweiligen Unterseiten.
         </p>
       </div>
     </section>
@@ -104,8 +120,8 @@
           <a href="rq1-agent.html" class="card card-rq" aria-label="Zur Forschungsfrage RQ 1">
             <h3>RQ 1: Interactive Agent</h3>
             <p>
-              Wie wirkt sich zu viel Automatisierung auf die Zufriedenheit
-              und Verantwortung der Nutzer aus?
+              Wie wirkt sich ein hoher Grad an Automatisierung auf die
+              Zufriedenheit und das Verantwortungsgefühl der Nutzer aus?
             </p>
             <p class="muted">→ zur Detailseite</p>
           </a>
@@ -113,12 +129,64 @@
           <a href="rq2-direct-manipulation.html" class="card card-rq" aria-label="Zur Forschungsfrage RQ 2">
             <h3>RQ 2: Direct Manipulation</h3>
             <p>
-              Welche Interface-Elemente unterstützen Nutzer dabei,
+              Welche Interface-Elemente helfen Nutzern dabei,
               Funktionen nach einer Nutzungspause schneller wiederzufinden?
             </p>
             <p class="muted">→ zur Detailseite</p>
           </a>
         </div>
+      </div>
+    </section>
+
+    <!-- Hauptleitfrage: Ausarbeitung / Antwort -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Antwort auf die zentrale Leitfrage</h2>
+        <article class="card">
+          <p>
+            Proaktive Unterstützung durch einen Interface Agent ist dann sinnvoll,
+            wenn sie Nutzern Orientierung gibt und Sicherheit vermittelt, ohne ihnen
+            die Kontrolle über das Interface zu nehmen. Gerade in
+            Direct-Manipulation-Umgebungen bleibt die direkte Interaktion mit
+            sichtbaren Objekten ein zentraler Bestandteil.<sup>[1]</sup>
+          </p>
+
+          <h3 style="margin-top:14px;">1) Proaktiv, aber kontrollierbar</h3>
+          <p>
+            Automatisierung kann hilfreich sein, wird jedoch problematisch, wenn
+            unklar ist, wer Entscheidungen trifft. Forschung zu Human Agency zeigt,
+            dass Nutzer Unterstützung eher akzeptieren, wenn sie Vorschläge erhalten
+            und Entscheidungen nachvollziehbar selbst treffen können.<sup>[4][5]</sup>
+            Für dieses Projekt bedeutet das: Der Agent soll Optionen aufzeigen,
+            nicht eigenständig handeln.
+          </p>
+
+          <h3 style="margin-top:14px;">2) Verständlich und transparent</h3>
+          <p>
+            Damit proaktive Unterstützung akzeptiert wird, müssen Nutzer verstehen,
+            was der Agent kann und warum er etwas vorschlägt. Leitlinien für
+            Human-AI-Interaction empfehlen, Fähigkeiten und Grenzen des Systems
+            klar zu kommunizieren und einfache Korrekturen zu ermöglichen.<sup>[6]</sup>
+          </p>
+
+          <h3 style="margin-top:14px;">3) Unterstützung beim Wiedereinstieg</h3>
+          <p>
+            Nach Nutzungspausen verlieren Nutzer häufig die Orientierung. Bekannte
+            Funktionen werden nicht sofort wieder erkannt.<sup>[7]</sup>
+            Die Literatur zeigt, dass klare Navigation, sichtbare Einstiegspunkte,
+            Verlaufsinformationen und visuelle Hinweise den Wiedereinstieg erleichtern
+            können.<sup>[7][8][9][10]</sup>
+            Der Agent unterstützt hier, indem er Kontext sichtbar macht, statt im
+            Hintergrund Aktionen auszuführen.
+          </p>
+
+          <p style="margin-top:14px;">
+            Zusammengefasst kann ein Interface Agent Nutzer in
+            Direct-Manipulation-Umgebungen sinnvoll unterstützen, wenn er Vorschläge
+            macht, transparent bleibt und den Wiedereinstieg erleichtert. Die direkte
+            Kontrolle über das Interface bleibt dabei stets beim Nutzer.<sup>[1][3]</sup>
+          </p>
+        </article>
       </div>
     </section>
 
@@ -131,18 +199,18 @@
           <article class="card">
             <h3>Annahmen</h3>
             <ul>
-              <li>Zu hohe Automatisierung kann das Gefühl von Kontrolle reduzieren.</li>
-              <li>Nutzer möchten unterstützt werden, ohne Verantwortung abzugeben.</li>
-              <li>Transparenz ist zentral für Vertrauen in Interface Agents.</li>
+              <li>Unterstützung wird eher akzeptiert, wenn Nutzer die Kontrolle behalten.</li>
+              <li>Unklare Automatisierung kann zu Unsicherheit führen.</li>
+              <li>Sichtbare Hinweise erleichtern den Wiedereinstieg nach Pausen.</li>
             </ul>
           </article>
 
           <article class="card">
             <h3>Zielsetzung</h3>
             <p>
-              Ziel ist es, zu untersuchen, wie unterschiedliche Grade
-              agentenbasierter Unterstützung das Nutzererleben in
-              Direct-Manipulation-Umgebungen beeinflussen.
+              Ziel des Projekts ist es, ein Interaktionskonzept und einen Prototyp zu
+              entwickeln, der agentenbasierte Unterstützung bietet, ohne die Vorteile
+              von Direct Manipulation zu verlieren.
             </p>
           </article>
         </div>
@@ -154,15 +222,93 @@
       <div class="container">
         <article class="card">
           <p>
-            Ausgehend von diesen Annahmen und theoretischen Überlegungen
-            wurde ein interaktiver Prototyp entwickelt. Dieser untersucht
-            insbesondere die Auswirkungen zu hoher Automatisierung durch
-            einen Interface Agent und stellt diese einer assistiven,
-            erklärenden Unterstützung gegenüber.
+            Auf Basis dieser Überlegungen wurde ein Prototyp entwickelt, der
+            unterschiedliche Formen agentenbasierter Unterstützung gegenüberstellt.
+            So wird sichtbar, wie sich Kontrolle, Transparenz und Orientierung im
+            Interface verändern.
           </p>
         </article>
-      </div>
-    </section>
+
+        <section class="section">
+  <div class="container">
+    <h2 class="section-title">Literatur</h2>
+
+    <ol class="footnotes">
+      <li>
+        Shneiderman, B. (1983).
+        <em>Direct Manipulation: A Step Beyond Programming Languages.</em>
+        IEEE Computer, 16(8), 57–69.
+      </li>
+
+      <li>
+        Maes, P. (1994).
+        Agents that reduce work and information overload.
+        <em>Communications of the ACM</em>, 37(7), 31–40.
+      </li>
+
+      <li>
+        Nwana, H. S. (1996).
+        Software agents: An overview.
+        <em>The Knowledge Engineering Review</em>, 11(3), 205–244.
+      </li>
+
+      <li>
+        Amershi, S., Weld, D., Vorvoreanu, M., et al. (2019).
+        <em>Guidelines for Human-AI Interaction.</em>
+        Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems.
+        ACM.
+      </li>
+
+      <li>
+        Boudouraki, A., Cameron, H. R., Reyes-Cruz, G., et al. (2025).
+        <em>Contesting Control with Automation in Technology-Mediated Interactions.</em>
+        Extended Abstracts of the CHI Conference on Human Factors in Computing Systems (CHI EA ’25).
+        ACM.
+      </li>
+
+      <li>
+        Weber, J., Esau, M., Schiller, M., et al. (2023).
+        <em>Designing an Interaction Concept for Assisted Cooking in Smart Kitchens:
+        Focus on Human Agency, Proactivity, and Multimodality.</em>
+        Proceedings of the ACM Conference on Designing Interactive Systems (DIS ’23).
+        ACM.
+      </li>
+
+      <li>
+        Kobayashi, T. (2013).
+        <em>A proposal of Smart TV System focused on findability.</em>
+        Proceedings of the International Conference on Consumer Electronics (ICCE ’13).
+        IEEE.
+      </li>
+
+      <li>
+        Notess, G. R., &amp; Dunn, K. (2004).
+        Improving information findability through information architecture.
+        <em>Online</em>, 28(3), 24–30.
+      </li>
+
+      <li>
+        Abela, C., &amp; Staff, C. (2016).
+        <em>Behaviour Mining for Automatic Task-Keeping and Visualisations for Task-Refinding.</em>
+        Proceedings of the International Conference on Multimedia Retrieval (ICMR ’16).
+        ACM.
+      </li>
+
+      <li>
+        Mariakakis, A., Goel, M., Gupta, S., Patel, S. N., &amp; Wobbrock, J. O. (2015).
+        <em>SwitchBack: Using Focus and Saccade Tracking to Guide Users’ Attention for Mobile Task Resumption.</em>
+        Proceedings of the 33rd Annual ACM Conference on Human Factors in Computing Systems (CHI ’15).
+        ACM.
+      </li>
+
+      <li>
+        Kliimask, K., &amp; Nikiforova, A. (2024).
+        <em>TAGIFY: Improving Findability in Complex Data Spaces through Automated Tagging.</em>
+        Human-Computer Interaction Conference Proceedings.
+      </li>
+    </ol>
+  </div>
+</section>
   </main>
 
   <!-- Footer -->

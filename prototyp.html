@@ -1,91 +1,108 @@
 <!doctype html>
 <html lang="de">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Prototyp – Interaktive Systeme</title>
-  <meta name="description" content="Interaktiver Prototyp (Figma Make) mit drei Agenten-Modi: No Agent, Over-Automated, Assistive." />
+  <meta name="description"
+    content="Interaktiver Prototyp (Figma Make) mit drei Agenten-Modi: No Agent, Over-Automated, Assistive." />
   <link rel="stylesheet" href="styles.css" />
 
   <!-- Kleine Zusatz-Styles nur für diese Seite (Embed-Box + Table) -->
   <style>
-    .embed{
+    .embed {
       border-radius: var(--radius);
       border: 1px solid var(--border);
-      background: rgba(255,255,255,0.03);
+      background: rgba(255, 255, 255, 0.03);
       overflow: hidden;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
     }
-    .embed-head{
-      display:flex;
+
+    .embed-head {
+      display: flex;
       flex-wrap: wrap;
       gap: 10px 12px;
       align-items: center;
       justify-content: space-between;
       padding: 14px 16px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.04);
     }
-    .embed-title{
-      margin:0;
+
+    .embed-title {
+      margin: 0;
       font-size: 15px;
       letter-spacing: -0.2px;
       color: var(--text);
     }
-    .embed-note{
-      margin:0;
+
+    .embed-note {
+      margin: 0;
       color: var(--muted2);
       font-size: 13px;
       max-width: 70ch;
     }
-    .embed-body{
+
+    .embed-body {
       padding: 16px;
     }
-    .embed-placeholder{
+
+    .embed-placeholder {
       border-radius: 14px;
-      border: 1px dashed rgba(255,255,255,0.18);
+      border: 1px dashed rgba(255, 255, 255, 0.18);
       padding: 18px;
-      background: rgba(255,255,255,0.03);
+      background: rgba(255, 255, 255, 0.03);
       color: var(--muted);
       font-size: 14px;
     }
-    .table-wrap{
+
+    .table-wrap {
       overflow-x: auto;
       border-radius: var(--radius);
       border: 1px solid var(--border);
-      background: rgba(255,255,255,0.03);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+      background: rgba(255, 255, 255, 0.03);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
     }
-    table{
+
+    table {
       width: 100%;
       border-collapse: collapse;
       min-width: 820px;
     }
-    th, td{
+
+    th,
+    td {
       padding: 12px 12px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       vertical-align: top;
       font-size: 14px;
     }
-    th{
+
+    th {
       text-align: left;
       color: var(--text);
-      background: rgba(255,255,255,0.04);
+      background: rgba(255, 255, 255, 0.04);
       position: sticky;
       top: 0;
       z-index: 1;
     }
-    td{ color: var(--muted); }
-    .mode-list{
+
+    td {
+      color: var(--muted);
+    }
+
+    .mode-list {
       margin: 8px 0 0 18px;
       color: var(--muted);
     }
-    .tag{
-      display:inline-flex;
+
+    .tag {
+      display: inline-flex;
       padding: 3px 8px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.06);
       color: var(--muted);
       font-size: 12px;
       margin-right: 6px;
@@ -104,7 +121,15 @@
 
       <nav class="nav" aria-label="Seiten">
         <a class="nav-link" href="index.html">Start</a>
-        <a class="nav-link" href="methodik.html">Methodik &amp; Konzept</a>
+        <div class="nav-item has-subnav">
+          <a class="nav-link" href="methodik.html">Methodik &amp; Konzept</a>
+
+          <div class="subnav">
+            <div class="subnav-title">Unterseiten</div>
+            <a href="rq1-agent.html" class="subnav-link">RQ1</a>
+            <a href="rq2-direct-manipulation.html" class="subnav-link">RQ2</a>
+          </div>
+        </div>
         <a class="nav-link active" href="prototyp.html">Prototyp</a>
         <a class="nav-link" href="dokumente.html">Dokumente</a>
         <a class="nav-link" href="rechtliche-hinweise.html" aria-current="page">
@@ -125,17 +150,20 @@
         <h1 class="section">Interaktiver Prototyp</h1>
         <p class="section-lead">
           Der Prototyp (Figma Make) demonstriert drei Autonomiegrade von Interface Agents in einer
-          Direct-Manipulation-Umgebung. Die Oberfläche bleibt bewusst gleich – nur das Verhalten des Systems ändert sich.
+          Direct-Manipulation-Umgebung. Die Oberfläche bleibt bewusst gleich – nur das Verhalten des Systems ändert
+          sich.
         </p>
 
         <div class="callout" role="note" aria-label="Kurzbeschreibung">
           <h2 class="callout-title">Wie man den Prototyp nutzt</h2>
           <p class="callout-text">
-            Wechsle über den Slider zwischen <strong>No Agent</strong>, <strong>Over-Automated Agent</strong> und <strong>Assistive Agent</strong>
+            Wechsle über den Slider zwischen <strong>No Agent</strong>, <strong>Over-Automated Agent</strong> und
+            <strong>Assistive Agent</strong>
             und beobachte, wie sich Transparenz, Nachvollziehbarkeit und Kontrollgefühl verändern.
           </p>
           <div class="callout-actions">
-            <a class="btn btn-primary" href="https://horn-chorus-81122294.figma.site" target="_blank" rel="noopener noreferrer">Prototyp öffnen</a>
+            <a class="btn btn-primary" href="https://horn-chorus-81122294.figma.site" target="_blank"
+              rel="noopener noreferrer">Prototyp öffnen</a>
             <a class="btn" href="#vergleich">Zum Vergleich</a>
           </div>
         </div>
@@ -257,53 +285,695 @@
 
         <div style="height:16px;"></div>
 
-        <div class="grid-2">
-          <article class="card">
-            <h3>Design-Prinzipien (kompakt)</h3>
-            <ul>
-              <li>Erklären statt ungefragt ausführen</li>
-              <li>Vor Aktionen: ankündigen & um Zustimmung bitten</li>
-              <li>Undo / Rückgängig und Abbrechen anbieten</li>
-              <li>Klare Hinweise: „Was passiert?“ und „Warum passiert das?“</li>
+        <!-- Prototyp-Dokumentation: Screenshot + Erklärung -->
+        <section class="section">
+          <div class="container">
+            <h2 class="section-subnav">Prototyp-Dokumentation</h2>
+
+
+          <!-- ✅ Direkt nach: <h2 class="section-subnav">Prototyp-Dokumentation</h2> einfügen -->
+          <nav class="card" aria-label="Inhaltsverzeichnis Prototyp-Dokumentation" style="margin-top:12px; margin-bottom:16px;">
+            <h3 style="margin:0 0 10px 0;">Inhaltsverzeichnis</h3>
+            <ul style="margin:0; padding-left:18px; color: var(--muted);">
+              <li><a href="#doc-projects" class="nav-link">Projects-Tab</a>
+                <ul style="margin:6px 0 0 0; padding-left:18px;">
+                  <li><a href="#doc-projects-noagent" class="nav-link">No-Agent Mode</a></li>
+                  <li><a href="#doc-projects-over" class="nav-link">Over-Automated Agent</a></li>
+                  <li><a href="#doc-projects-assist" class="nav-link">Assistive Agent</a></li>
+                </ul>
+              </li>
+
+              <li style="margin-top:8px;"><a href="#doc-activity" class="nav-link">Activity-Tab</a>
+                <ul style="margin:6px 0 0 0; padding-left:18px;">
+                  <li><a href="#doc-activity-noagent" class="nav-link">No-Agent Mode</a></li>
+                  <li><a href="#doc-activity-over" class="nav-link">Over-Automated Agent</a></li>
+                  <li><a href="#doc-activity-assist" class="nav-link">Assistive Agent</a></li>
+                </ul>
+              </li>
+
+              <li style="margin-top:8px;"><a href="#doc-decisions" class="nav-link">Decisions-Tab</a>
+                <ul style="margin:6px 0 0 0; padding-left:18px;">
+                  <li><a href="#doc-decisions-over" class="nav-link">No-Agent &amp; Over-Automated Agent</a></li>
+                  <li><a href="#doc-decisions-assist" class="nav-link">Assistive Agent</a></li>
+                </ul>
+              </li>
             </ul>
-          </article>
+          </nav>
 
-          <article class="card">
-            <h3>Weiterführend</h3>
-            <p>
-              Details zur theoretischen Einordnung findest du unter
-              <a href="methodik.html">Methodik &amp; Konzept</a>.
-              Materialien und PDFs sind unter <a href="dokumente.html">Dokumente</a> gesammelt.
+
+
+
+
+            <section class="section" id="doc-projects"></section>
+            <h2 class="section-lead">Projects-Tab</h2>
+            <p class="section-lead">
+              Im Folgenden dokumentieren wir den Prototyp anhand von Screenshots. Links ist jeweils die Oberfläche,
+              rechts erklären wir, was zu sehen ist und worauf es im Kontext unserer Leitfrage ankommt.
             </p>
-            <div style="height:10px;"></div>
-            <a class="btn btn-primary" href="https://horn-chorus-81122294.figma.site" target="_blank" rel="noopener noreferrer">
-              Prototyp öffnen
-            </a>
-          </article>
-        </div>
 
-      </div>
-    </section>
+            <div class="doc-row">
+              <!-- LEFT: Screenshot -->
+              <figure class="doc-media card">
+                <img src="bilder/Bild1-doku.png"
+                  alt="Screenshot: Projektmanagement-Board mit Spalten (To Do, In Progress, Blocked, Done) und Agent-Mode-Slider"
+                  loading="lazy" />
+                <figcaption class="muted">
+                  Abbildung 1: Projektboard als Direct-Manipulation-Umgebung (Klick für Vollbild).
+                </figcaption>
+              </figure>
+
+              <!-- RIGHT: Text -->
+              <!-- RIGHT: Text -->
+              <!-- RIGHT: Text -->
+            
+              <article class="doc-text card" id="doc-projects-noagent">
+                <h3>Übersicht: Projektboard &amp; No-Agent-Mode</h3>
+
+                <p>
+                  Der Prototyp simuliert eine typische Projektmanagement-Oberfläche, wie sie in
+                  Softwareunternehmen häufig eingesetzt wird. Aufgaben sind in Spalten wie
+                  <strong>To Do</strong>, <strong>In Progress</strong>, <strong>Blocked</strong> und
+                  <strong>Done</strong> organisiert. Diese Darstellung folgt dem Prinzip der
+                  <strong>Direct Manipulation</strong>: Alle relevanten Objekte sind sichtbar,
+                  ihr Status ist unmittelbar erkennbar und Änderungen können direkt nachvollzogen werden.
+                </p>
+
+                <p>
+                  Das Aufgabenboard bildet den zentralen Arbeitsbereich (1) und dient als Referenzpunkt
+                  für die Untersuchung, wie Nutzer nach einer Nutzungspause wieder Orientierung
+                  im Projektkontext gewinnen. Aufgaben sind gleichwertig sichtbar, es findet
+                  keine automatische Gewichtung oder Priorisierung statt.
+                </p>
+
+                <p>
+                  Auf der linken Seite befindet sich die Navigation (2), über die wir uns initial im
+                  <strong>Projects</strong>-Bereich befinden. Sie stellt den übergeordneten
+                  Anwendungskontext dar und simuliert eine reale Arbeitsumgebung, in der Nutzer
+                  zwischen verschiedenen Bereichen wechseln. Innerhalb dieses Kontexts betrachten
+                  wir exemplarisch drei typische Nutzungssituationen im Tool.
+                </p>
+
+                <p>
+                  Am unteren Rand der Oberfläche befindet sich der <strong>Agent-Mode-Slider</strong> (3).
+                  In der hier dargestellten Ausgangssituation ist der <strong>No-Agent-Mode</strong> aktiv.
+                  Das bedeutet, dass keinerlei Interface Agents eingreifen: Das System verhält sich
+                  rein reaktiv und überlässt sämtliche Entscheidungen vollständig dem Nutzer.
+                </p>
+
+                <p>
+                  Die visuelle Oberfläche bleibt in allen Agent-Modi identisch. Erst durch die
+                  Betätigung des Sliders ändert sich das Verhalten des Systems. Dadurch wird es
+                  möglich, die Auswirkungen unterschiedlicher Automatisierungsgrade direkt
+                  miteinander zu vergleichen, ohne dass visuelle Unterschiede den Eindruck verfälschen.
+                </p>
+
+                <p>
+                  Zusätzlich stehen im oberen rechten Bereich Filter- und Suchfunktionen (4) zur Verfügung.
+                  Im No-Agent-Mode werden diese ausschließlich manuell vom Nutzer gesteuert. Es findet
+                  keine automatische Aktivierung oder Anpassung statt, wodurch maximale Transparenz
+                  und vollständige Kontrolle gewährleistet sind.
+                </p>
+
+                <p>
+                  Zusammenfassend stellt der No-Agent-Mode den Referenzzustand dar, in dem Nutzer
+                  vollständig für Navigation, Priorisierung und Entscheidungsfindung verantwortlich
+                  sind. Durch das Aktivieren der weiteren Agent-Modi können anschließend gezielt
+                  Abweichungen von diesem Zustand untersucht werden, die in den folgenden Abschnitten
+                  dokumentiert werden.
+                </p>
+
+                <div style="height:14px;"></div>
+              </article>
+
+
+            </div>
+        </section>
+
+        <!-- Prototyp-Dokumentation: Over-Automated Agent -->
+        <section class="section">
+          <div class="container">
+            <h2 class="section-title" id="doc-projects-over"> Over-Automated Agent</h2>
+            <p class="section-lead">
+              Der Modus <em>Over-Automated Agent</em> stellt ein bewusst überzeichnetes
+              Szenario dar, in dem das System weitreichende Entscheidungen eigenständig
+              trifft. Dieser Modus wird über den Agent-Mode-Slider aktiviert und kann
+              in allen drei Anwendungsszenarien des Prototyps genutzt werden.
+              Ziel ist es, die Auswirkungen zu starker Automatisierung auf Transparenz,
+              Kontrolle und wahrgenommene Verantwortung sichtbar zu machen.
+            </p>
+
+            <div class="doc-row">
+              <!-- LEFT: Screenshot -->
+              <figure class="doc-media card">
+                <img src="bilder/Bild2-doku.png"
+                  alt="Screenshot: Over-Automated Agent mit automatischer Priorisierung, hervorgehobener Aufgabe und aktivem Assistant Panel"
+                  class="zoomable" loading="lazy" />
+                <figcaption class="muted">
+                  Abbildung 2: Over-Automated Agent mit automatischer Priorisierung und systemseitigen
+                  Handlungsempfehlungen (Klick für Vollbild).
+                </figcaption>
+              </figure>
+
+              <!-- RIGHT: Text -->
+              <article class="doc-text card">
+                <h3>Verhalten des Systems</h3>
+
+                <p>
+                  <strong>(1) Agent-Mode-Slider:</strong>
+                  Der Over-Automated Agent wird aktiviert, indem der Slider am unteren
+                  Bildschirmrand in die mittlere Position bewegt wird. Ab diesem Moment
+                  übernimmt das System aktiv Teile der Entscheidungsfindung, ohne dass
+                  der Nutzer einzelne Eingriffe explizit auslöst.
+                </p>
+
+                <p>
+                  <strong>(2) Automatische Priorisierung im Aufgabenboard:</strong>
+                  Im dargestellten Zustand hebt das System eine Aufgabe visuell hervor
+                  und kennzeichnet sie als empfohlenen Einstiegspunkt. Diese Entscheidung
+                  basiert auf früherem Nutzungsverhalten und internen Systemannahmen.
+                  Andere Aufgaben treten visuell in den Hintergrund oder werden
+                  teilweise ausgeblendet.
+                </p>
+
+                <p>
+                  <strong>(3) Assistant Panel mit Handlungsempfehlungen:</strong>
+                  Zusätzlich erscheint ein seitliches Assistant Panel, das dem Nutzer
+                  konkrete Vorschläge unterbreitet, etwa womit der Arbeitstag begonnen
+                  werden sollte. Die Empfehlungen werden als sinnvoll begründet
+                  dargestellt, ohne dass der Entscheidungsprozess transparent
+                  nachvollzogen werden kann.
+                </p>
+
+                <h4>Auswirkungen auf Nutzerwahrnehmung</h4>
+
+                <p>
+                  Obwohl der Over-Automated Agent den Einstieg scheinbar erleichtert,
+                  entstehen mehrere Probleme: Der Gesamtüberblick über das Projekt wird
+                  eingeschränkt, alternative Handlungsoptionen geraten aus dem Blick
+                  und die Entscheidungslogik des Systems bleibt größtenteils verborgen.
+                </p>
+
+                <p>
+                  Nutzer erhalten eine klare Handlungsaufforderung, geben jedoch einen
+                  Teil ihrer aktiven Entscheidungs- und Verantwortungsrolle ab. Dieser
+                  Modus dient daher bewusst als Extremfall, um die Risiken von
+                  Über-Automatisierung im Kontext von Interface Agents deutlich zu machen.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <h2 class="section-title" id="doc-projects-assist">Assistive Agent</h2>
+            <p class="section-lead">
+              Der <em>Assistive Agent</em> stellt den Gegenpol zum Over-Automated Agent dar.
+              In diesem Modus unterstützt das System den Wiedereinstieg aktiv, ohne
+              Entscheidungen eigenständig zu treffen oder Inhalte zu unterdrücken.
+              Der Fokus liegt auf Erklärbarkeit, Transparenz und der bewussten Einbindung
+              der Nutzer in den Arbeitsprozess.
+            </p>
+
+            <div class="doc-row">
+              <!-- LEFT: Screenshot -->
+              <figure class="doc-media card">
+                <img src="bilder/Bild3-doku.png"
+                  alt="Screenshot: Assistive Agent mit erklärendem Assistant Panel und Hinweisen zum Wiedereinstieg"
+                  class="zoomable" loading="lazy" />
+                <figcaption class="muted">
+                  Abbildung 3: Assistive Agent mit erklärenden Hinweisen und kontextbezogener Unterstützung (Klick für
+                  Vollbild).
+                </figcaption>
+              </figure>
+
+              <!-- RIGHT: Text -->
+              <article class="doc-text card">
+                <h3>Verhalten des Systems</h3>
+
+                <p>
+                  <strong>(1) Agent-Mode-Slider:</strong><br />
+                  Der Assistive Agent wird aktiviert, indem der Slider am unteren Rand
+                  der Oberfläche in die rechte Position bewegt wird. Anders als im
+                  Over-Automated Modus trifft das System hier keine eigenständigen
+                  Entscheidungen, sondern begleitet den Nutzer erklärend durch die
+                  Oberfläche.
+                </p>
+
+                <p>
+                  <strong>(2) Assistant Panel: erklärende KI-Unterstützung:</strong><br />
+                  Auf der rechten Seite erscheint ein Assistant Panel, das als
+                  erklärende Instanz fungiert. Der Agent bietet an, einzelne Bereiche
+                  der Oberfläche zu erklären, etwa das Aufgabenboard, Filterfunktionen
+                  oder Prioritätskennzeichnungen. Nutzer können gezielt auswählen,
+                  welche Elemente sie erläutert bekommen möchten.
+                </p>
+
+                <p>
+                  Zusätzlich fasst der Assistive Agent zusammen, <strong>was während
+                    einer dreiwöchigen Abwesenheit passiert ist</strong>. Dazu gehören
+                  beispielsweise neu hinzugekommene Aufgaben, veränderte Prioritäten,
+                  abgeschlossene Tickets oder neue Kommentare. Diese Informationen
+                  werden strukturiert dargestellt, ohne den restlichen Projektkontext
+                  auszublenden.
+                </p>
+
+                <p>
+                  Am unteren Bereich des Assistant Panels bietet das System außerdem
+                  <strong>konkrete Einstiegshilfen</strong> an. Dazu zählen Hinweise wie
+                  „Womit beginnen andere Nutzer in dieser Situation?“ oder
+                  „Typische nächste Schritte nach einer Pause“. Diese Empfehlungen
+                  verstehen sich als Vorschläge, nicht als verbindliche Anweisungen.
+                </p>
+
+                <h4>Auswirkungen auf Nutzerwahrnehmung</h4>
+
+                <p>
+                  Der Assistive Agent unterstützt den Wiedereinstieg, ohne Kontrolle
+                  oder Verantwortung zu entziehen. Nutzer behalten die volle Übersicht
+                  über das Projekt, können Entscheidungen weiterhin selbst treffen
+                  und erhalten gleichzeitig kontextbezogene Orientierung.
+                </p>
+
+                <p class="muted">
+                  Dieser Modus zeigt, wie Interface Agents durch erklärende,
+                  transparente Unterstützung Mehrwert schaffen können, ohne die
+                  Prinzipien von Direct Manipulation zu untergraben.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+
+        
+        <section class="section">
+          <div class="container">
+            <h2 class="section-lead"  id="doc-activity">Activity-Tab</h2>
+            <p class="section-lead">
+              Dieser Abschnitt dokumentiert den <strong>Activity</strong>-Bereich des Prototyps. Die Ansicht dient dazu,
+              nach einer Nutzungspause schnell wieder Kontext aufzubauen, indem relevante Änderungen und Aktivitäten
+              chronologisch sichtbar gemacht werden.
+            </p>
+
+            <div class="doc-row">
+              <!-- LEFT: Screenshot -->
+              <figure class="doc-media card">
+                <img src="bilder/Bild4-doku.png"
+                  alt="Screenshot: Activity-Tab mit chronologischer Liste von Aktivitäten und Agent-Mode-Slider"
+                  class="zoomable" loading="lazy" />
+                <figcaption class="muted">
+                  Abbildung 4: Activity-Tab als Kontext- und Verlaufssicht (Klick für Vollbild).
+                </figcaption>
+              </figure>
+
+              <!-- RIGHT: Text -->
+              <article class="doc-text card" id="doc-activity-noagent">
+                <h3>Übersicht: Activity-Tab im No-Agent-Mode</h3>
+
+                <p>
+                  <strong>(1) Navigation zum Activity-Tab:</strong><br />
+                  Der Activity-Tab ist über die linke Seitenleiste erreichbar. Der Activity-Tab ist eine chronologische
+                  Liste von Tätigkeiten, die der Nutzer getätigt hat.
+                  Dadurch wird ein realistischer Nutzungskontext hergestellt, in dem Nutzer nach
+                  einer Pause gezielt zu einem Bereich navigieren können, um sich wieder zu orientieren.
+                </p>
+
+                <p>
+                  <strong>(2) Agent-Mode (No Agent):</strong><br />
+                  In der dargestellten Ausgangssituation ist der <strong>No-Agent-Mode</strong> aktiv. Das bedeutet,
+                  dass keine
+                  agentenbasierte Unterstützung eingreift: Die Inhalte werden rein statisch angezeigt, ohne automatische
+                  Hervorhebungen, Filter oder Empfehlungen. Nutzer müssen selbst entscheiden, welche Einträge relevant
+                  sind
+                  und wie sie daraus ihren Wiedereinstieg ableiten.
+                </p>
+
+                <p>
+                  <strong>(3) Funktion der Activity-Liste:</strong><br />
+                  Der Activity-Tab zeigt eine chronologische Übersicht über kürzlich erfolgte Aktionen im Arbeitskontext
+                  (z. B. bearbeitete Tickets, geänderte Prioritäten, neue Zuweisungen oder abgeschlossene Aufgaben).
+                  Die zentrale Idee ist, dass Nutzer nach einer längeren Abwesenheit schneller verstehen, <em>was sich
+                    verändert hat</em>,
+                  ohne den gesamten Projektstand manuell rekonstruieren zu müssen.
+                </p>
+
+                <p class="muted">
+                  In den Agent-Modi kann diese Ansicht später zusätzlich unterstützt werden (z. B. durch
+                  Zusammenfassungen, Hervorhebungen oder Erklärungen) – im No-Agent-Mode bleibt sie bewusst neutral.
+                </p>
+
+                <div style="height:14px;"></div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <h2 class="section-title" id="doc-activity-over">Over-Automated Mode (Activity-Tab)</h2>
+            <p class="section-lead">
+              In diesem Screenshot wird der <em>Over-Automated Agent</em> im Activity-Tab gezeigt.
+              Der Modus verdeutlicht, wie das System den Wiedereinstieg eigenständig „übernimmt“,
+              indem es automatisch priorisiert, einen Einstiegspunkt festlegt und damit den
+              Handlungsspielraum der Nutzer einschränken kann.
+            </p>
+
+            <div class="doc-row">
+              <!-- LEFT: Screenshot -->
+              <figure class="doc-media card">
+                <img src="bilder/Bild5-doku.png"
+                  alt="Screenshot: Activity-Tab im Over-Automated Mode mit automatisch ausgewähltem Kontext und Workflow Assistant Hinweis"
+                  class="zoomable" loading="lazy" />
+                <figcaption class="muted">
+                  Abbildung 5: Activity-Tab im Over-Automated Mode – automatisches Fortsetzen und Hervorhebung eines
+                  Kontexts (Klick für Vollbild).
+                </figcaption>
+              </figure>
+
+              <!-- RIGHT: Text -->
+              <article class="doc-text card">
+                <h3>Automatisches „Resume“ im Activity-Tab</h3>
+
+                <p>
+                  <strong>(1) Agent-Mode-Slider:</strong><br />
+                  Der Over-Automated Agent wird über den Slider am unteren Rand aktiviert.
+                  In diesem Modus trifft das System Entscheidungen eigenständig und verändert
+                  den Arbeitskontext, ohne dass Nutzer jeden Schritt explizit anstoßen oder bestätigen.
+                </p>
+
+                <p>
+                  <strong>(2) Automatisch ausgewählter Einstiegspunkt („Resumed automatically“):</strong><br />
+                  In der Activity-Liste wird ein Eintrag prominent hervorgehoben und als
+                  automatisch fortgesetzter Kontext markiert. Das System entscheidet damit,
+                  <em>wo</em> der Nutzer weiterarbeiten soll – basierend auf Recency und
+                  angenommenen Arbeitsmustern. Andere Aktivitäten bleiben zwar sichtbar,
+                  verlieren jedoch an Aufmerksamkeit, weil der Fokus stark auf den „Startpunkt“
+                  gelenkt wird.
+                </p>
+
+                <p>
+                  <strong>(3) Workflow Assistant Hinweis:</strong><br />
+                  Der Assistant kommuniziert, dass der „relevanteste“ Kontext erkannt und
+                  automatisch wiederhergestellt wurde. Diese Formulierung suggeriert eine
+                  hohe System-Sicherheit, erklärt jedoch nur begrenzt, warum genau dieser
+                  Eintrag gewählt wurde und welche Alternativen es gäbe.
+                </p>
+
+                <h4>Auswirkungen auf Nutzerwahrnehmung</h4>
+
+                <p>
+                  Der Einstieg wirkt zunächst bequem, kann jedoch problematisch sein: Nutzer
+                  werden in eine vorgegebene Richtung gelenkt, ohne den Projektzustand
+                  vollständig selbst zu rekonstruieren. Dadurch kann das Gefühl entstehen,
+                  dass Priorisierung „passiert“, statt bewusst getroffen zu werden – was
+                  Transparenz, Kontrolle und wahrgenommene Verantwortung reduziert.
+                </p>
+
+                <p class="muted">
+                  Dieser Screenshot illustriert den Extremfall: Der Agent übernimmt den
+                  Wiedereinstieg nicht nur unterstützend, sondern legt ihn aktiv fest.
+                </p>
+
+                <div style="height:14px;"></div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <h2 class="section-title" id="doc-activity-assist">Assistive Mode (Activity-Tab)</h2>
+            <p class="section-lead">
+              Dieser Screenshot zeigt den <em>Assistive Agent</em> im Activity-Tab.
+              Im Gegensatz zum Over-Automated Mode übernimmt das System hier keine
+              eigenständige Entscheidung, sondern unterstützt den Wiedereinstieg
+              erklärend und transparent.
+            </p>
+
+            <div class="doc-row">
+              <!-- LEFT: Screenshot -->
+              <figure class="doc-media card">
+                <img src="bilder/Bild6-doku.png"
+                  alt="Screenshot: Activity-Tab im Assistive Mode mit hervorgehobener Aktivität und erklärendem Workflow Assistant"
+                  class="zoomable" loading="lazy" />
+                <figcaption class="muted">
+                  Abbildung 6: Activity-Tab im Assistive Mode – erklärende Hinweise statt automatischer Entscheidungen
+                  (Klick für Vollbild).
+                </figcaption>
+              </figure>
+
+              <!-- RIGHT: Text -->
+              <article class="doc-text card">
+                <h3>Unterstützter Wiedereinstieg im Activity-Tab</h3>
+
+                <p>
+                  <strong>(1) Agent-Mode-Slider:</strong><br />
+                  Der Assistive Agent wird aktiviert, indem der Slider am unteren Rand
+                  der Oberfläche in die rechte Position bewegt wird. In diesem Modus
+                  bleibt die Kontrolle vollständig beim Nutzer. Das System greift nicht
+                  automatisch in den Arbeitskontext ein, sondern bietet kontextbezogene
+                  Unterstützung an.
+                </p>
+
+                <p>
+                  <strong>(2) Hervorgehobene Aktivität als Vorschlag:</strong><br />
+                  In der Activity-Liste wird ein Eintrag visuell hervorgehoben und als
+                  möglicher Wiedereinstieg vorgeschlagen. Anders als im Over-Automated
+                  Mode wird diese Markierung explizit als Hinweis kommuniziert und nicht
+                  als automatisch fortgesetzter Zustand verstanden.
+                </p>
+
+                <p>
+                  <strong>(3) Workflow Assistant mit erklärender Unterstützung:</strong><br />
+                  Der Workflow Assistant erläutert, <em>warum</em> diese Aktivität relevant
+                  sein könnte, etwa weil sie zuletzt bearbeitet wurde oder im Zusammenhang
+                  mit aktuellen Projektänderungen steht. Zusätzlich erinnert der Agent
+                  daran, was sich seit der letzten Nutzung – beispielsweise innerhalb
+                  der vergangenen drei Wochen – verändert hat.
+                </p>
+
+                <p>
+                  Ergänzend bietet der Assistive Agent strukturierte Einstiegshilfen an,
+                  etwa Hinweise darauf, womit Nutzer in vergleichbaren Situationen
+                  üblicherweise beginnen oder welche nächsten Schritte sinnvoll sein
+                  könnten. Diese Vorschläge sind bewusst unverbindlich und dienen
+                  ausschließlich der Orientierung.
+                </p>
+
+                <h4>Auswirkungen auf Nutzerwahrnehmung</h4>
+
+                <p>
+                  Der Assistive Mode unterstützt den Wiedereinstieg, ohne Transparenz
+                  oder Verantwortung zu reduzieren. Nutzer behalten den vollständigen
+                  Überblick über alle Aktivitäten und können selbst entscheiden, ob
+                  sie den vorgeschlagenen Einstieg aufgreifen oder einen anderen
+                  Arbeitskontext wählen.
+                </p>
+
+                <p class="muted">
+                  Dieser Modus zeigt, wie erklärende Interface Agents den
+                  Wiedereinstieg erleichtern können, ohne die Prinzipien von
+                  Direct Manipulation zu verletzen.
+                </p>
+
+                <div style="height:14px;"></div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+
+
+          <section class="section">
+            <div class="container">
+              <h2 class="section-lead" id="doc-decisions">Decisions</h2>
+              <p class="section-lead">
+                Der <strong>Decisions</strong>-Tab ist über die linke Navigation erreichbar und
+                dient als zentraler Bereich für systemseitige Vorschläge und Entscheidungen.
+                Er macht sichtbar, wie stark Interface Agents in Entscheidungsprozesse eingreifen können.
+              </p>
+              <h2 class="section-title">No-Agent Mode & Over Automated Agent (Decisions-Tab)</h2>
+              <div class="doc-row">
+                <!-- LEFT: Screenshot -->
+                <figure class="doc-media card">
+                  <img src="bilder/Bild7-doku.png"
+                    alt="Screenshot: Decisions-Tab im Over-Automated Mode mit automatisch ausgeführten Entscheidungen"
+                    class="zoomable" loading="lazy" />
+                  <figcaption class="muted">
+                    Abbildung 7: Decisions-Tab im Over-Automated Mode – automatisierte Entscheidungen durch das System.
+                  </figcaption>
+                </figure>
+
+                <!-- RIGHT: Text -->
+                <article class="doc-text card"  id="doc-decisions-over">
+                  <h3>Decisions im No-Agent- und Over-Automated Mode</h3>
+
+                  <p>
+                    Im <strong>No-Agent-Mode</strong> wird der Decisions-Tab nicht aktiv unterstützt.
+                    Nutzer erhalten lediglich einen Hinweis, dass dieser Bereich ohne
+                    Interface Agents nicht zur Verfügung steht. Sämtliche Entscheidungen
+                    müssen manuell getroffen werden, ohne systemseitige Vorschläge oder Eingriffe.
+                  </p>
+
+                  <p>
+                    Mit Aktivierung des <strong>Over-Automated Agent</strong> verändert sich
+                    die Rolle dieses Bereichs grundlegend.
+                  </p>
+
+                  <p>
+                    <strong>(1) Agent-Mode-Slider:</strong><br />
+                    Der Over-Automated Mode wird über den Slider am unteren Rand der Oberfläche
+                    aktiviert. Ab diesem Punkt übernimmt das System aktiv Entscheidungsprozesse
+                    und führt Maßnahmen eigenständig aus.
+                  </p>
+
+                  <p>
+                    <strong>(2) Automatisierte Entscheidungsübersicht:</strong><br />
+                    Im zentralen Bereich werden Entscheidungen angezeigt, die das System bereits
+                    getroffen und unmittelbar umgesetzt hat. Dazu zählen etwa das Zusammenführen
+                    ähnlicher Tickets, das Ändern von Projektprioritäten oder das Archivieren
+                    inaktiver Projekte.
+                  </p>
+
+                  <p>
+                    Diese Einträge sind als <em>„Applied automatically by the system“</em>
+                    gekennzeichnet. Nutzer werden informiert, müssen die Entscheidung jedoch
+                    weder bestätigen noch überprüfen.
+                  </p>
+
+                  <p>
+                    <strong>(3) Workflow Assistant:</strong><br />
+                    Der Workflow Assistant erläutert, dass die Entscheidungen auf Basis
+                    erkannter Projektbedingungen getroffen wurden, beispielsweise zur
+                    Effizienzsteigerung. Die Begründung bleibt dabei abstrakt und bietet
+                    keine Möglichkeit, Alternativen abzuwägen oder aktiv einzugreifen.
+                  </p>
+
+                  <h4>Einordnung</h4>
+
+                  <p>
+                    Der Decisions-Tab macht im Over-Automated Mode deutlich, wie Verantwortung
+                    vom Nutzer auf das System verlagert wird. Entscheidungen erscheinen als
+                    abgeschlossene Systemakte, deren Logik nur eingeschränkt nachvollziehbar ist.
+                  </p>
+
+                  <p class="muted">
+                    Dieser Modus verdeutlicht die Risiken vollständig automatisierter
+                    Entscheidungsfindung und bildet einen klaren Kontrast zu assistiven,
+                    erklärenden Agentenansätzen.
+                  </p>
+
+                  <div style="height:14px;"></div>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="container">
+              <h2 class="section-title" id="doc-decisions-assist">Decisions – Assistive Mode</h2>
+              <p class="section-lead">
+                Dieser Abschnitt zeigt den <em>Assistive Agent</em> im Decisions-Tab.
+                Im Gegensatz zum Over-Automated Mode führt das System hier keine Entscheidungen
+                eigenständig aus, sondern macht nachvollziehbare Vorschläge, die aktiv von
+                Nutzern angenommen oder abgelehnt werden können.
+              </p>
+
+              <div class="doc-row">
+                <!-- LEFT: Screenshot -->
+                <figure class="doc-media card">
+                  <img src="bilder/Bild8-doku.png"
+                    alt="Screenshot: Decisions-Tab im Assistive Mode mit Vorschlägen und Apply/Dismiss-Optionen sowie Workflow Assistant Hinweis"
+                    class="zoomable" loading="lazy" />
+                  <figcaption class="muted">
+                    Abbildung 8: Decisions-Tab im Assistive Mode – Vorschläge mit Nutzerentscheidung (Klick für
+                    Vollbild).
+                  </figcaption>
+                </figure>
+
+                <!-- RIGHT: Text -->
+                <article class="doc-text card">
+                  <h3>Vorschläge statt Systementscheidungen</h3>
+
+                  <p>
+                    <strong>(1) Agent-Mode-Slider:</strong><br />
+                    Der Assistive Agent wird aktiviert, indem der Slider am unteren Rand der
+                    Oberfläche in die rechte Position bewegt wird. In diesem Modus bleibt
+                    die Verantwortung vollständig beim Nutzer: Der Agent unterstützt durch
+                    Hinweise und Vorschläge, trifft jedoch keine eigenständigen Entscheidungen.
+                  </p>
+
+                  <p>
+                    <strong>(2) System suggestions (Transparenz &amp; Kontrolle):</strong><br />
+                    Im oberen Bereich wird deutlich kommuniziert, dass es sich um
+                    <strong>Vorschläge</strong> handelt. Nutzer werden explizit darauf hingewiesen,
+                    dass sie die Kontrolle behalten und jede Entscheidung prüfen sowie
+                    <em>anwenden</em> oder <em>verwerfen</em> können. Damit wird der Unterstützungscharakter
+                    des Agents klar von automatisierten Eingriffen abgegrenzt.
+                  </p>
+
+                  <p>
+                    <strong>(3) Entscheidungsobjekte mit Apply/Dismiss:</strong><br />
+                    Die einzelnen Vorschläge (z. B. „Merge similar tickets“, „Archive inactive project“)
+                    werden als konkrete Entscheidungsobjekte dargestellt. Durch die sichtbaren Aktionen
+                    <strong>Apply</strong> und <strong>Dismiss</strong> wird der Entscheidungsprozess
+                    explizit gemacht: Der Nutzer bestätigt, ob eine Maßnahme ausgeführt werden soll.
+                    Bereits getroffene Entscheidungen können als Status (z. B. „Applied by you“) markiert sein.
+                  </p>
+
+                  <p>
+                    <strong>(4) Workflow Assistant (kontextbezogene Erklärung):</strong><br />
+                    Der Workflow Assistant erläutert, dass potenziell relevante Situationen identifiziert
+                    wurden und der Nutzer diese überprüfen kann. Der Agent liefert damit Kontext und
+                    Orientierung, ohne die Entscheidung vorwegzunehmen. Dadurch bleibt die Handlungslogik
+                    nachvollziehbar, während Nutzer weiterhin selbst abwägen.
+                  </p>
+
+                  <h4>Auswirkungen auf Nutzerwahrnehmung</h4>
+
+                  <p>
+                    Der Assistive Mode unterstützt Entscheidungsfindung, ohne Agency zu reduzieren:
+                    Nutzer behalten den Überblick, können Vorschläge nachvollziehen und aktiv entscheiden.
+                    Im Vergleich zum Over-Automated Mode bleibt Transparenz erhalten, während gleichzeitig
+                    kognitive Last reduziert werden kann – insbesondere nach einer Nutzungspause.
+                  </p>
+
+                  <p class="muted">
+                    Dieser Modus demonstriert, wie Interface Agents Entscheidungen vorbereiten können,
+                    ohne sie ungefragt auszuführen.
+                  </p>
+
+                  <div style="height:14px;"></div>
+                </article>
+              </div>
+            </div>
+
+
+
+
+
   </main>
 
-  <!-- Footer -->
-  <!-- Footer -->
-<footer class="site-footer" aria-label="Footer">
-  <div class="container footer-inner">
-    <div class="footer-left">
-      <div class="footer-title">
-        Interface Agents in Direct-Manipulation-Umgebungen
-      </div>
 
-      <div class="footer-meta">
-        © 2025 Ajay Shankar, Atilla Cetin – Interaktive Systeme, 
-        Human Centered Computing, Hochschule Reutlingen
-      
+  <!-- Footer -->
+  <footer class="site-footer" aria-label="Footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="footer-title">
+          Interface Agents in Direct-Manipulation-Umgebungen
+        </div>
+
+        <div class="footer-meta">
+          © 2025 Ajay Shankar, Atilla Cetin – Interaktive Systeme,
+          Human Centered Computing, Hochschule Reutlingen
+
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
   <script src="script.js"></script>
 </body>
+
 </html>

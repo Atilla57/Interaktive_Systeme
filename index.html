@@ -9,37 +9,48 @@
 </head>
 
 <body>
-  <!-- Header / Navigation -->
-  <header class="site-header" aria-label="Hauptnavigation">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Zur Startseite">
-        <span class="brand-text">Interaktive Systeme · Projektarbeit</span>
-      </a>
+<!-- Header / Navigation -->
+<header class="site-header" aria-label="Hauptnavigation">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Zur Startseite">
+      <span class="brand-text">Interaktive Systeme · Projektarbeit</span>
+    </a>
 
-      <nav class="nav" aria-label="Seiten">
-        <a class="nav-link active" href="index.html">Start</a>
+<nav class="nav" aria-label="Seiten">
+  <!-- Desktop Links -->
+  <div class="nav-desktop">
+    <div class="nav-panel">
+      <a class="nav-link active" href="index.html">Start</a>
         <div class="nav-item has-subnav">
-          <a class="nav-link" href="methodik.html">Methodik &amp; Konzept</a>
-
+        <a class="nav-link" href="methodik.html">Methodik &amp; Konzept</a>
           <div class="subnav">
             <div class="subnav-title">Unterseiten</div>
             <a href="rq1-agent.html" class="subnav-link">RQ1</a>
             <a href="rq2-direct-manipulation.html" class="subnav-link">RQ2</a>
           </div>
         </div>
+    <a class="nav-link" href="prototyp.html">Prototyp</a>
+    <a class="nav-link" href="dokumente.html">Dokumente</a>
+    <a class="nav-link" href="rechtliche-hinweise.html">Rechtliche Hinweise</a>
+  </div>
 
-        <a class="nav-link" href="prototyp.html">Prototyp</a>
-        <a class="nav-link" href="dokumente.html">Dokumente</a>
-        <a class="nav-link" href="rechtliche-hinweise.html" aria-current="page">
-          Rechtliche Hinweise
-        </a>
-      </nav>
-
-      <a class="cta" href="https://horn-chorus-81122294.figma.site" target="_blank" rel="noopener noreferrer">
-        Prototyp öffnen →
-      </a>
+  <!-- Mobile Burger -->
+  <details class="nav-details">
+    <summary class="nav-summary" aria-label="Menü öffnen">
+      Menü <span class="burger" aria-hidden="true"></span>
+    </summary>
     </div>
-  </header>
+  </details>
+</nav>
+
+
+    <a class="cta" href="https://horn-chorus-81122294.figma.site" target="_blank" rel="noopener noreferrer">
+      Prototyp öffnen →
+    </a>
+  </div>
+</header>
+
+
 
   <main>
     <!-- Hero -->
@@ -139,14 +150,21 @@
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer" aria-label="Footer">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <div class="footer-title">Interface Agents in Direct-Manipulation-Umgebungen</div>
-        <div class="footer-meta">Interaktive Systeme · <span id="year"></span></div>
+<footer class="site-footer" aria-label="Footer">
+  <div class="container footer-inner">
+    <div class="footer-left">
+      <div class="footer-title">
+        Interface Agents in Direct-Manipulation-Umgebungen
+      </div>
+
+      <div class="footer-meta">
+        © 2026 Ajay Shankar, Atilla Cetin – Interaktive Systeme, 
+        Human Centered Computing, Hochschule Reutlingen
+      
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
 
   <script src="script.js"></script>
 </body>

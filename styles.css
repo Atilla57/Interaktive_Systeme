@@ -222,6 +222,7 @@ a.card:focus-visible{
   border: 1px solid transparent;
   transition: 150ms ease;
   text-decoration: none; /* Navigation nicht unterstreichen */
+  
 }
 .nav-link:hover{
   color: var(--text);
@@ -233,6 +234,11 @@ a.card:focus-visible{
   color: var(--text);
   border-color: rgba(90,167,255,0.35);
   background: rgba(90,167,255,0.10);
+}
+.nav-link[aria-current="page"]{
+  color: var(--text);
+  background: rgba(90,167,255,0.14);
+  border: 1px solid rgba(90,167,255,0.35);
 }
 
 .cta{
@@ -595,5 +601,136 @@ img {
 /* Sicherheit: Dropdown selbst soll NICHT scrollen */
 .subnav {
   max-height: none !important;
-  overflow: visible !important;
+  overflow: visible !important;}
+/* ======================================================
+   BURGER-NAVIGATION (ohne JS, barrierefrei)
+   ====================================================== */
+/* ======================================================
+   BURGER-NAVIGATION (ohne JS) – Desktop bleibt normal
+   ====================================================== */
+
+/* Desktop default */
+.nav-desktop{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-details{
+  display: none; /* Burger nur mobile */
+}
+
+/* Burger-Icon */
+.burger{
+  width: 18px;
+  height: 12px;
+  display: inline-block;
+  margin-left: 10px;
+  position: relative;
+}
+.burger::before,
+.burger::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  height:2px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 2px;
+}
+.burger::before{ top:0; }
+.burger::after{ bottom:0; }
+/* mittlere Linie */
+.burger{
+  background: rgba(255,255,255,0.9);
+  padding: 5px 0;
+  background-clip: content-box;
+}
+
+/* Mobile */
+@media (max-width: 640px){
+  /* Desktop Links ausblenden */
+  .nav-desktop{ display: none; }
+
+  /* Burger anzeigen */
+  .nav-details{
+    display: block;
+    position: relative;
+  }
+
+  .nav{
+    flex: 1 1 100%;
+    justify-content: flex-end;
+    overflow: visible;
+    white-space: normal;
+  }
+
+  .nav-summary{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.14);
+    background: rgba(255,255,255,0.06);
+    color: var(--text);
+    font-weight: 650;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+
+  .nav-summary::-webkit-details-marker{ display: none; }
+
+  .nav-panel{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 10px);
+    min-width: 240px;
+    padding: 10px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: rgba(11,18,32,0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+    z-index: 999;
+  }
+
+  .nav-details[open] .nav-panel{
+    display: grid;
+    gap: 6px;
+  }
+
+  .nav-panel .nav-link{
+    display: block;
+    padding: 10px 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--muted);
+  }
+
+  .nav-panel .nav-link:hover{
+    background: rgba(255,255,255,0.06);
+    color: var(--text);
+  }
+
+  .nav-panel .nav-link.active{
+    background: rgba(90,167,255,0.14);
+    border: 1px solid rgba(90,167,255,0.35);
+    color: var(--text);
+  }
+
+  .cta{
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Tastatur-Fokus */
+.nav-summary:focus-visible,
+.nav-desktop a:focus-visible,
+.nav-panel a:focus-visible{
+  outline: 3px solid rgba(122, 196, 255, 0.9);
+  outline-offset: 3px;
 }

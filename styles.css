@@ -1152,3 +1152,27 @@ object, iframe{
   width: 100%;
   display: block;
 }
+
+@media (max-width: 640px){
+  .grid-2{ grid-template-columns: 1fr !important; }
+
+  .card{ padding: 14px; }
+
+  .card h3{
+    font-size: 15px;
+    line-height: 1.25;
+  }
+
+  .card p,
+  .card li{
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .card ul{ padding-left: 18px; }
+}
+
+.card, .card *{
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}

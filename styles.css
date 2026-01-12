@@ -469,11 +469,12 @@ h1{
 /* DOKU */
 /* === Prototyp-Doku: Screenshot links, Text rechts === */
 .doc-row {
-  display: grid;
-  grid-template-columns: 1.25fr 1fr;
-  gap: 1.5rem;
-  align-items: start;
+  display: flex;
+  flex-direction: column; /* statt row */
+  gap: 24px;              /* Abstand zwischen Screenshot und Text */
 }
+
+
 
 .doc-media img {
   width: 100%;

@@ -972,3 +972,14 @@ img {
     white-space: nowrap;
   }
 }
+
+@media (max-width: 640px){
+  .cta-mobile{
+    width: auto !important;
+  }
+  .nav{
+    flex-wrap: nowrap !important;
+    white-space: nowrap;
+    gap: 10px;
+  }
+}

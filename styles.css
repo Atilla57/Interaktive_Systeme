@@ -807,3 +807,43 @@ img {
   }
 }
 
+/* ===== FIX: Mobile Header – Menü + CTA nebeneinander ===== */
+@media (max-width: 640px) {
+  /* Header nicht umbrechen lassen */
+  .header-inner {
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
+
+  /* Brand darf zweizeilig sein, aber nicht alles blockieren */
+  .brand {
+    min-width: 0;
+    max-width: 58%;
+  }
+
+  .brand-text {
+    white-space: normal;
+    line-height: 1.2;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  /* Nav rechts als Zeile für CTA + Menü */
+  .nav {
+    flex: 0 0 auto;
+    min-width: 0;
+    width: auto;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  /* CTA darf NICHT full width sein */
+  .cta-mobile {
+    width: auto !important;
+    justify-content: center;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+}

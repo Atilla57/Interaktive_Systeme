@@ -1030,3 +1030,75 @@ img {
     white-space: nowrap;
   }
 }
+
+
+/* =========================================================
+   FINAL OVERRIDE (Mobile) – Menü garantiert sichtbar
+   ========================================================= */
+@media (max-width: 640px) {
+
+  /* Header: Titel oben, Buttons unten */
+  .header-inner{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    flex-wrap: nowrap !important;
+    gap: 12px !important;
+  }
+
+  /* Titel sichtbar (du hattest bei 920px display:none) */
+  .brand-text{
+    display: block !important;
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    white-space: normal !important;
+    text-align: center !important;
+    color: var(--text) !important;
+  }
+
+  .brand{
+    width: 100% !important;
+    min-width: 0 !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* Buttons-Zeile: CTA + Menü nebeneinander */
+  .nav{
+    width: 100% !important;
+    min-width: 0 !important;
+    flex: 0 0 auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 12px !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+  }
+
+  /* CTA darf nicht 100% */
+  .cta,
+  .cta-mobile{
+    width: auto !important;
+    display: inline-flex !important;
+    flex: 0 0 auto !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
+  }
+
+  /* Menü MUSS sichtbar sein */
+  .nav-details{
+    display: inline-block !important;
+    flex: 0 0 auto !important;
+    position: relative !important;
+  }
+
+  .nav-summary{
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    white-space: nowrap !important;
+  }
+}

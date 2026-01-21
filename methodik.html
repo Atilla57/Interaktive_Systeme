@@ -289,6 +289,118 @@
 
 
 
+<!-- Evaluation (ausklappbar, einfache Sprache) -->
+<section class="section">
+  <div class="container">
+
+    <details class="card" aria-labelledby="eval-title">
+      <summary id="eval-title" class="section-title" style="cursor:pointer;">
+        Evaluation (ohne Nutzertests)
+      </summary>
+
+      <div style="margin-top:16px;">
+
+        <p class="section-lead">
+          In diesem Abschnitt wird erläutert, wie das Projekt bewertet wurde.
+          Es wurden keine Nutzertests durchgeführt. Stattdessen erfolgt eine
+          reflektierte Einschätzung auf Basis von Designprinzipien,
+          Literatur und eigenen Durchgängen durch das Interface.
+        </p>
+        <br>
+        <h3>1) Ziel der Evaluation</h3>
+        <ul>
+          <li>
+            Überprüfen, ob zentrale Funktionen verständlich aufgebaut sind.
+          </li>
+          <li>
+            Einschätzen, ob Nutzer sich im Interface orientieren können.
+          </li>
+          <li>
+            Prüfen, ob der Interface Agent Unterstützung bietet, ohne
+            die Kontrolle der Nutzer zu übernehmen.
+          </li>
+          <li>
+            Berücksichtigung grundlegender Aspekte der Barrierefreiheit.
+          </li>
+        </ul>
+
+        <h3>2) Warum keine Nutzertests durchgeführt wurden</h3>
+        <ul>
+          <li>
+            Der Schwerpunkt lag auf Konzeption, Literaturarbeit
+            und Prototyp-Entwicklung.
+          </li>
+          <li>
+            Daher wurde auf eine konzeptionelle Bewertung zurückgegriffen.
+          </li>
+        </ul>
+
+        <h3>3) Vorgehen bei der Evaluation</h3>
+        <ul>
+          <li>
+            Gedanklicher Durchgang typischer Nutzungssituationen
+            (z. B. erster Einstieg, Wiedereinstieg nach Pause).
+          </li>
+          <li>
+            Überprüfung der Oberfläche anhand bekannter
+            Gestaltungsprinzipien wie Klarheit, Konsistenz
+            und Sichtbarkeit.
+          </li>
+          <li>
+            Einschätzung möglicher Stellen, an denen Nutzer
+            unsicher werden könnten.
+          </li>
+          <li>
+            Abgleich mit bekannten Leitlinien zu
+            Human-AI-Interaction und Nutzerkontrolle.
+          </li>
+        </ul>
+
+        <h3>4) Kriterien der Bewertung</h3>
+        <ul>
+          <li>
+            Sind Funktionen leicht auffindbar?
+          </li>
+          <li>
+            Ist nachvollziehbar, warum der Agent Vorschläge macht?
+          </li>
+          <li>
+            Können Nutzer jederzeit selbst entscheiden?
+          </li>
+          <li>
+            Unterstützt das Interface den Wiedereinstieg?
+          </li>
+          <li>
+            Gibt es offensichtliche Barrieren oder Unklarheiten?
+          </li>
+        </ul>
+
+        <h3>5) Ethische Aspekte</h3>
+        <ul>
+          <li>
+            Es wurden keine personenbezogenen Daten erhoben und es fanden keine Tests mit realen Personen statt..
+          </li>
+          <li>
+            Siehe auch das Kapitel "Ethics Canvas" hierzu.
+          </li>
+        </ul>
+
+        <h3>6) Einschränkungen und Ausblick</h3>
+        <ul>
+          <li>
+            Ohne Nutzertests können keine Aussagen über
+            tatsächliche Nutzungsdauer oder Zufriedenheit
+            gemacht werden.
+          </li>
+          <li>
+            Die Evaluation basiert auf Theorie und eigener Analyse.
+          </li>
+        </ul>
+      </div>
+    </details>
+
+  </div>
+</section>
 
 
         <section class="section">
@@ -371,7 +483,12 @@
     </ol>
   </div>
 </section>
-  </main>
+
+
+
+</main>
+
+
 
   <!-- Footer -->
 <footer class="site-footer" aria-label="Footer">
@@ -383,12 +500,94 @@
 
       <div class="footer-meta">
         © 2026 Ajay Shankar, Atilla Cetin – Interaktive Systeme, 
-        Human Centered Computing, Hochschule Reutlingen
-      
+        Human Centered Computing, Hochschule Reutlingen - 
+      <button class="a11y-fab" type="button" id="a11yOpen">
+  Barrierefreiheit
+</button>
+
       </div>
     </div>
   </div>
 </footer>
+<div class="a11y-overlay" id="a11yOverlay" hidden></div>
+
+<section
+  class="a11y-panel"
+  id="a11yPanel"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="a11yTitle"
+  hidden
+>
+  <div class="a11y-panel__header">
+    <h2 id="a11yTitle">Barrierefreiheit</h2>
+    <button
+      class="a11y-close"
+      type="button"
+      id="a11yClose"
+      aria-label="Barrierefreiheitsmenü schließen"
+    >
+      ✕
+    </button>
+  </div>
+
+  <div class="a11y-panel__content">
+    <!-- Hoher Kontrast -->
+    <div class="a11y-option">
+      <div>
+        <strong>Hoher Kontrast</strong>
+        <div class="a11y-hint">
+          Erhöht Lesbarkeit und Fokus-Hervorhebung.
+        </div>
+      </div>
+      <button
+        class="a11y-toggle"
+        type="button"
+        id="toggleContrast"
+        aria-pressed="false"
+      >
+        Aus
+      </button>
+    </div>
+
+    <!-- Textgröße -->
+    <div class="a11y-option">
+      <label for="fontScale">
+        <strong>Textgröße</strong>
+        <div class="a11y-hint">
+          Skaliert die Schrift auf der gesamten Seite.
+        </div>
+      </label>
+      <input
+        id="fontScale"
+        type="range"
+        min="100"
+        max="140"
+        step="5"
+        value="100"
+      />
+      <div class="a11y-hint" id="fontScaleValue">100%</div>
+    </div>
+
+    <!-- Links unterstreichen -->
+    <div class="a11y-option">
+      <div>
+        <strong>Links unterstreichen</strong>
+        <div class="a11y-hint">
+          Macht Links leichter erkennbar.
+        </div>
+      </div>
+      <button
+        class="a11y-toggle"
+        type="button"
+        id="toggleUnderlineLinks"
+        aria-pressed="false"
+      >
+        Aus
+      </button>
+    </div>
+  </div>
+</section>
 
   <script src="script.js"></script>
 </body>

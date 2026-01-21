@@ -136,11 +136,93 @@
       </div>
       <div class="footer-meta">
         © 2026 Ajay Shankar, Atilla Cetin – Interaktive Systeme,
-        Human Centered Computing, Hochschule Reutlingen
+        Human Centered Computing, Hochschule Reutlingen - <button class="a11y-fab" type="button" id="a11yOpen">
+  Barrierefreiheit
+</button>
+
       </div>
     </div>
   </div>
 </footer>
+<div class="a11y-overlay" id="a11yOverlay" hidden></div>
+
+<section
+  class="a11y-panel"
+  id="a11yPanel"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="a11yTitle"
+  hidden
+>
+  <div class="a11y-panel__header">
+    <h2 id="a11yTitle">Barrierefreiheit</h2>
+    <button
+      class="a11y-close"
+      type="button"
+      id="a11yClose"
+      aria-label="Barrierefreiheitsmenü schließen"
+    >
+      ✕
+    </button>
+  </div>
+
+  <div class="a11y-panel__content">
+    <!-- Hoher Kontrast -->
+    <div class="a11y-option">
+      <div>
+        <strong>Hoher Kontrast</strong>
+        <div class="a11y-hint">
+          Erhöht Lesbarkeit und Fokus-Hervorhebung.
+        </div>
+      </div>
+      <button
+        class="a11y-toggle"
+        type="button"
+        id="toggleContrast"
+        aria-pressed="false"
+      >
+        Aus
+      </button>
+    </div>
+
+    <!-- Textgröße -->
+    <div class="a11y-option">
+      <label for="fontScale">
+        <strong>Textgröße</strong>
+        <div class="a11y-hint">
+          Skaliert die Schrift auf der gesamten Seite.
+        </div>
+      </label>
+      <input
+        id="fontScale"
+        type="range"
+        min="100"
+        max="140"
+        step="5"
+        value="100"
+      />
+      <div class="a11y-hint" id="fontScaleValue">100%</div>
+    </div>
+
+    <!-- Links unterstreichen -->
+    <div class="a11y-option">
+      <div>
+        <strong>Links unterstreichen</strong>
+        <div class="a11y-hint">
+          Macht Links leichter erkennbar.
+        </div>
+      </div>
+      <button
+        class="a11y-toggle"
+        type="button"
+        id="toggleUnderlineLinks"
+        aria-pressed="false"
+      >
+        Aus
+      </button>
+    </div>
+  </div>
+</section>
 
 <script src="script.js"></script>
 </body>
